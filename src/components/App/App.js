@@ -1,7 +1,15 @@
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
+import Preview from "../Preview/Preview";
+
 
 const App = () => {
 	return (
-		<h1>Weather App</h1>
+		<Router>
+			<Routes>
+				<Route path="/" element={<Preview/>}/>
+			</Routes>
+		</Router>
 	)
 }
 

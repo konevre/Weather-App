@@ -1,0 +1,52 @@
+@import "../../style/variables.scss";
+
+.aside {
+    background-color: $space-dark;
+    border-radius: 30px;
+    margin: 6vh 0 6vh 6vh;
+
+
+    &__nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &-logo {
+            
+            margin-top: 1.85vh;
+            width: 4vw;
+            height: 7vh;
+            background: $space-light;
+            border-radius: 16px;
+            margin-bottom: 10vh;
+
+            img {
+                padding: 1vh;
+            }
+        }
+
+        &-item {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 3.8vh;
+            font-weight: 500;
+            font-size: 1.9vh;
+            line-height: 4.5vh;
+            color: $white;
+            
+            a {
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                text-decoration: none;
+                color: $grey;
+
+                img {
+                    height: 4vh;
+                }
+            }
+        }
+    }
+}

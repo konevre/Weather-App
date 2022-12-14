@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 import "./preview.scss";
 import preview_img from "../../resources/preview/preview.svg";
-import preview_logo from "../../resources/preview/logo.svg";
+import preview_logo from "../../resources/logo.svg";
 
 const Preview = () => {
     return (

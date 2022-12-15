@@ -1,5 +1,13 @@
 .weather-grid {
     display: grid;
-    grid-template-columns: 16vh 50vh 40vh;
+    grid-template-columns: 9vw 51vw 40vw;
     grid-template-rows: 100vh;
+    column-gap: 5vh;
+}
+
+.weather__wrapper {
+    display: grid;
+    grid-template-columns: 51vw;
+    grid-template-rows: 26.5vh 26.5vh 25vh;
+    row-gap: 2.8vh;
 }

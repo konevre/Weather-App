@@ -1,0 +1,14 @@
+@import "../../style/variables.scss";
+
+.search {
+    width: 51vw;
+    margin-top: 6vh;
+    height: 4.4vh;
+    background: $space-dark;
+    border-radius: 10px;
+    border: none;
+    font-weight: 500;
+    font-size: 1.5vh;
+    padding: 0 1.7vh 0 1.7vh;
+    color: $dirt;
+}

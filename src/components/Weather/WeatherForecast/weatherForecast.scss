@@ -1,0 +1,78 @@
+@import "../../../style/variables.scss";
+
+.weather__forecast {
+    margin-top: 14vh;
+    width: 31vw;
+    height: 80vh;
+    background: $space-dark;
+    border-radius: 30px;
+
+    &-title {
+        font-weight: 700;
+        font-size: 1.9vh;
+        color: $grey;
+        margin-top: 3vh;
+        margin-left: 3vh;
+    }
+
+    &-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &-item {
+        height: 10.3vh;
+        margin-top: 3.8vh;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+
+        img {
+            width: 5.5vw;
+            
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            bottom: -2.2vh;
+            width: 26.2vw;
+            height: 0.35vh;
+            background: $space-light;
+        }
+
+        &:last-child:after {
+            content: "";
+            display: none;
+        }
+    }
+
+    &-day {
+        width: 3.7vw;
+        font-weight: 400;
+        font-size: 2.2vh;
+        color: $grey;
+    }
+
+    &-descr {
+        text-align: center;
+        font-weight: 500;
+        font-size: 2.2vh;
+        width: 7vw;
+        color: $white;
+    }
+
+    &-temp {
+        font-weight: 400;
+        font-size: 2.2vh;
+        color: $grey;
+
+        span {
+            font-weight: 500;
+            font-size: 2.2vh;
+            color: $white;
+        }
+    }
+}
+

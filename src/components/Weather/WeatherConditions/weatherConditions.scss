@@ -1,0 +1,50 @@
+@import "../../../style/variables.scss";
+
+.weather__conditions {
+    background: $space-dark;
+    border-radius: 30px;
+
+    &-title {
+        font-weight: 700;
+        font-size: 1.9vh;
+        color: $grey;
+        margin-top: 3vh;
+        margin-left: 3vh;
+    }
+
+    &-wrapper {
+        display: grid;
+        margin-top: 2vh;
+        margin-left: 5vh;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        row-gap: 1.5vh;
+    }
+
+    &-item {
+        display: grid;
+        grid-template-columns: 2.5vw auto;
+        grid-template-rows: 3vh auto;
+
+        img {
+            height: 100%;
+        }
+    }
+
+    &-subtitle {
+        color: $grey;
+        font-weight: 700;
+        font-size: 2.2vh;
+        align-self: center;
+    }
+
+    &-value {
+        font-weight: 700;
+        margin-top: 0.5vh;
+        font-size: 3vh;
+        color: $white;
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+}

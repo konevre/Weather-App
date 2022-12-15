@@ -1,24 +1,26 @@
-import feel from "../../../resources/conditions/feel.svg";
+import feelIcon from "../../../resources/conditions/feel.svg";
 import drop from "../../../resources/conditions/drop.svg";
-import wind from "../../../resources/conditions/wind.svg";
+import windIcon from "../../../resources/conditions/wind.svg";
 import index from "../../../resources/conditions/index.svg";
 
 import "./weatherConditions.scss";
 
-const WeatherConditions = () => {
+const WeatherConditions = ({weatherCurrent}) => {
+    const { feel, wind } = weatherCurrent;
+
     return (
         <div className="weather__conditions">
             <div className="weather__conditions-title">AIR CONDITIONS</div>
             <div className="weather__conditions-wrapper">
                 <div className="weather__conditions-item">
-                    <img src={feel} alt="real_feel" className="weather__conditions-icon" />
+                    <img src={feelIcon} alt="real_feel" className="weather__conditions-icon" />
                     <div className="weather__conditions-subtitle">Real Feel</div>
-                    <div className="weather__conditions-value">30°</div>
+                    <div className="weather__conditions-value">{feel}°</div>
                 </div>
                 <div className="weather__conditions-item">
-                    <img src={wind} alt="real_feel" className="weather__conditions-icon" />
+                    <img src={windIcon} alt="real_feel" className="weather__conditions-icon" />
                     <div className="weather__conditions-subtitle">Wind</div>
-                    <div className="weather__conditions-value">0.2 km/h</div>
+                    <div className="weather__conditions-value">{wind} m/s</div>
                 </div>
                 <div className="weather__conditions-item">
                     <img src={drop} alt="real_feel" className="weather__conditions-icon" />

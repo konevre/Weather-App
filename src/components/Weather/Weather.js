@@ -20,11 +20,11 @@ const Weather = () => {
     const [ weatherForecast, setWeatherForecast ] = useState([]);
 
     useEffect(() => {
-        requestCurrent("Irkutsk")
+        requestCurrent("Novosibirsk")
             .then(currentLoaded);
-        requestToday("Irkutsk")
+        requestToday("Novosibirsk")
             .then(todayLoaded);
-        requestForecast("Irkutsk")
+        requestForecast("Novosibirsk")
             .then(forecastLoaded);
     }, [])
 
@@ -38,7 +38,6 @@ const Weather = () => {
 
     const forecastLoaded = (response) => {
         setWeatherForecast(response);
-        console.log(response)
     }
 
     console.log("render");

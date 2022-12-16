@@ -6,7 +6,7 @@ import index from "../../../resources/conditions/index.svg";
 import "./weatherConditions.scss";
 
 const WeatherConditions = ({weatherCurrent}) => {
-    const { feel, wind } = weatherCurrent;
+    const { feel, wind, humidity, visibility } = weatherCurrent;
 
     return (
         <div className="weather__conditions">
@@ -24,13 +24,13 @@ const WeatherConditions = ({weatherCurrent}) => {
                 </div>
                 <div className="weather__conditions-item">
                     <img src={drop} alt="real_feel" className="weather__conditions-icon" />
-                    <div className="weather__conditions-subtitle">Chance of rain</div>
-                    <div className="weather__conditions-value">0%</div>
+                    <div className="weather__conditions-subtitle">Humidity</div>
+                    <div className="weather__conditions-value">{humidity}%</div>
                 </div>
                 <div className="weather__conditions-item">
                     <img src={index} alt="real_feel" className="weather__conditions-icon" />
-                    <div className="weather__conditions-subtitle">UV Index</div>
-                    <div className="weather__conditions-value">3</div>
+                    <div className="weather__conditions-subtitle">Visibility</div>
+                    <div className="weather__conditions-value">{visibility} km</div>
                 </div>
             </div>
         </div>

@@ -15,18 +15,24 @@ import "./weather.scss";
 const Weather = () => {
 
     const { requestCurrent, requestToday, requestForecast } = weatherService();
+
     const [ weatherCurrent, setWeatherCurrent ] = useState({});
     const [ weatherToday, setWeatherToday ] = useState([]);
     const [ weatherForecast, setWeatherForecast ] = useState([]);
+    const [ city, setCity ] = useState("Novosibirsk");
 
     useEffect(() => {
-        requestCurrent("Novosibirsk")
+        updateWeather(city);
+    }, [city])
+
+    const updateWeather = (city) => {
+        requestCurrent(city)
             .then(currentLoaded);
-        requestToday("Novosibirsk")
+        requestToday(city)
             .then(todayLoaded);
-        requestForecast("Novosibirsk")
+        requestForecast(city)
             .then(forecastLoaded);
-    }, [])
+    }
 
     const currentLoaded = (response) => {
         setWeatherCurrent(response);
@@ -46,7 +52,7 @@ const Weather = () => {
         <div className="weather-grid" >
             <Sidebar />
             <div>
-                <Search />
+                <Search setCity={setCity}/>
                 <div className="weather__wrapper">
                     <WeatherCurrent weatherCurrent={weatherCurrent}/>
                     <WeatherToday weatherToday={weatherToday}/>

@@ -1,7 +1,7 @@
 import moment from 'moment';
 
 const weatherService = () => {
-    const _apiKey = "e418a47a172d8f5a163ca9f1d327b2ed";
+    const _apiKey = "6cf6cd0da4914f10b1ee0650e8712ea8";
     const _apiBase = "https://api.openweathermap.org/data/2.5/";
 
     const requestCurrent = async (city) => {
@@ -52,7 +52,7 @@ const weatherService = () => {
             wind: data.wind.speed,
             icon: data.weather[0].icon,
             visibility: data.visibility / 1000,
-            time: moment(data.dt).utcOffset(data.timezone / 60).format("kk:mm")
+            time: moment().utcOffset(data.timezone / 60).format("kk:mm")
         }
     }
 

@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
+import moment from 'moment';
 
 import weatherService from "../../services/apiRequest";
+import { useGetCurrentWeatherQuery } from "../../api/apiSlice";
 
 import Sidebar from "../Sidebar/Sidebar";
 import Search from "./../Search/Search";
@@ -11,9 +13,33 @@ import WeatherForecast from "./WeatherForecast/WeatherForecast";
 
 import "./weather.scss";
 
-
 const Weather = () => {
 
+    const  {
+        data: currentWeather,
+        isFetching, // после первой загрузки
+        isLoading, // только первая загрузка
+        isSuccess,
+        isError,
+        error
+    } = useGetCurrentWeatherQuery("Novosibirsk")
+
+    
+
+    // const transformCurrent = (data) => {
+    //     return {
+    //         name: data.name,
+    //         temp: Math.round(data.main.temp),
+    //         feel: Math.round(data.main.feels_like),
+    //         humidity: data.main.humidity,
+    //         wind: data.wind.speed,
+    //         icon: data.weather[0].icon,
+    //         visibility: data.visibility / 1000,
+    //         time: moment().utcOffset(data.timezone / 60).format("HH:mm")
+    //     }
+    // }
+
+    // before RTK
     const { requestCurrent, requestToday, requestForecast } = weatherService();
 
     const [ weatherCurrent, setWeatherCurrent ] = useState({});

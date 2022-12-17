@@ -1,8 +1,13 @@
-import moment from 'moment';
-
 const weatherService = () => {
     const _apiKey = "6cf6cd0da4914f10b1ee0650e8712ea8";
     const _apiBase = "https://api.openweathermap.org/data/2.5/";
+
+    const calcTime = (dt, offset) => {
+        const d = new Date(dt * 1000);
+        const utc = d.getTime() + (d.getTimezoneOffset() * 60000);
+        const nd = new Date(utc + (3600000 * offset / 60 / 60));
+        return nd.toLocaleTimeString().slice(0, -3)
+    }
 
     const requestCurrent = async (city) => {
         const response = await fetch(`${_apiBase}/weather?q=${city}&appid=${_apiKey}&units=metric`);
@@ -13,7 +18,7 @@ const weatherService = () => {
     const requestToday = async (city) => {
         const response = await fetch(`${_apiBase}/forecast?q=${city}&appid=${_apiKey}&units=metric`);
         const result = await response.json();
-        return result.list.slice(0, 6).map(transformToday);
+        return transformToday(result.list, result.city.timezone)
     }
 
     const requestForecast = async (city) => {
@@ -23,13 +28,15 @@ const weatherService = () => {
         return list.map(transformForecast);
     }
 
-    const transformToday = (data) => {
-        return {
-            temp: Math.round(data.main.temp),
-            descr: data.weather[0].main,
-            time: data.dt_txt.slice(-8, -3),
-            icon: data.weather[0].icon
-        }
+    const transformToday = (list, timezone) => {
+        return list.slice(0, 6).map(item => {
+            return {
+                temp: Math.round(item.main.temp),
+                descr: item.weather[0].main,
+                time: calcTime(item.dt, timezone),
+                icon: item.weather[0].icon
+            }
+        })
     }
 
     const transformForecast = (data) => {
@@ -43,7 +50,7 @@ const weatherService = () => {
     }
 
     const transformCurrent = (data) => {
-
+        
         return {
             name: data.name,
             temp: Math.round(data.main.temp),
@@ -52,7 +59,7 @@ const weatherService = () => {
             wind: data.wind.speed,
             icon: data.weather[0].icon,
             visibility: data.visibility / 1000,
-            time: moment().utcOffset(data.timezone / 60).format("kk:mm")
+            time: calcTime(data.dt, data.timezone)
         }
     }
 

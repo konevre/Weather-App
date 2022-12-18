@@ -1,6 +1,7 @@
 import Skeleton from '@mui/material/Skeleton';
 
-const WeatherCurrentSkeleton = () => {
+const WeatherCurrentSkeletonLoading = () => {
+    console.log("load")
     return (
         <div className="weather__current">
             <div className="weather__current-wrapper">
@@ -15,4 +16,4 @@ const WeatherCurrentSkeleton = () => {
     )
 }
 
-export default WeatherCurrentSkeleton;
+export default WeatherCurrentSkeletonLoading;

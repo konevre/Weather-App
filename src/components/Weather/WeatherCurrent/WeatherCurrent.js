@@ -1,3 +1,5 @@
+import { useSelector } from "react-redux";
+
 import { transformCurrent } from "../../../utils/utils";
 import { useGetCurrentWeatherQuery } from "../../../api/apiSlice";
 
@@ -6,10 +8,21 @@ import WeatherCurrentSkeleton from "./WeatherCurrentSkeleton";
 import "./weatherCurrent.scss"
 
 const WeatherCurrent = () => {
-    const  {
+
+    const { activeCity } = useSelector(state => state.weather);
+    // get current GEOLOCATION
+    // const successCallback = (position) => {
+    //     console.log(position);
+    //   };
+    //   const errorCallback = (error) => {
+    //     console.log(error);
+    //   };
+    // navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+
+    const {
         data: currentWeather,
         isSuccess,
-    } = useGetCurrentWeatherQuery("Novosibirsk");
+    } = useGetCurrentWeatherQuery(activeCity);
 
     
     if (isSuccess) {

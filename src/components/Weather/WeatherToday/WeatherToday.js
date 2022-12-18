@@ -1,3 +1,5 @@
+import { useSelector } from "react-redux";
+
 import { useGetTodayWeatherQuery } from "../../../api/apiSlice";
 import { transformToday } from "../../../utils/utils";
 
@@ -7,10 +9,12 @@ import "./weatherToday.scss";
 
 const WeatherToday = () => {
 
-    const  {
+    const { activeCity } = useSelector(state => state.weather);
+
+    const {
         data: todayWeather,
         isSuccess,
-    } = useGetTodayWeatherQuery("Novosibirsk");
+    } = useGetTodayWeatherQuery(activeCity);
 
     if (isSuccess) {
         const today = transformToday(todayWeather.list, todayWeather.city.timezone);

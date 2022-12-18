@@ -1,3 +1,5 @@
+import { useSelector } from "react-redux";
+
 import { transformCurrent } from "../../../utils/utils";
 import { useGetCurrentWeatherQuery } from "../../../api/apiSlice";
 
@@ -11,12 +13,13 @@ import indexIcon from "../../../resources/conditions/index.svg";
 import "./weatherConditions.scss";
 
 const WeatherConditions = () => {
-    const  {
+
+    const { activeCity } = useSelector(state => state.weather);
+
+    const {
         data: currentWeather,
         isSuccess,
-    } = useGetCurrentWeatherQuery("Novosibirsk");
-
-   
+    } = useGetCurrentWeatherQuery(activeCity);
 
     if (isSuccess) {
         const { feel, wind, humidity, visibility } = transformCurrent(currentWeather);

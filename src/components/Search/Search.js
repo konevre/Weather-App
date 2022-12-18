@@ -1,11 +1,17 @@
+import { makeActive } from "../Weather/weatherSlice";
+import { useDispatch } from "react-redux";
+
 import "./search.scss"
 
-const Search = (props) => {
+const Search = () => {
+
+    const dispatch = useDispatch();
 
     const submitSearch = (e) => {
         e.preventDefault()
+        
         const city = e.target.search.value;
-        props.setCity(city);
+        dispatch(makeActive(city));
         e.target.reset();
     }
 

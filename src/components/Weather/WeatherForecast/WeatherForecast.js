@@ -1,3 +1,5 @@
+import { useSelector } from "react-redux";
+
 import { transformForecast } from "../../../utils/utils";
 import { useGetForecastWeatherQuery } from "../../../api/apiSlice";
 
@@ -7,10 +9,12 @@ import "./weatherForecast.scss";
 
 const WeatherForecast = () => {
 
+    const { activeCity } = useSelector(state => state.weather);
+
     const  {
         data: forecastWeather,
         isSuccess,
-    } = useGetForecastWeatherQuery("Novosibirsk");
+    } = useGetForecastWeatherQuery(activeCity);
 
     if (isSuccess) {
         const forecast = transformForecast(forecastWeather);

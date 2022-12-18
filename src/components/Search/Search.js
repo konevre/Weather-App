@@ -9,10 +9,10 @@ const Search = () => {
 
     const submitSearch = (e) => {
         e.preventDefault()
-        
         const city = e.target.search.value;
         dispatch(makeActive(city));
         e.target.reset();
+
     }
 
     return (

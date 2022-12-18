@@ -14,7 +14,16 @@ const WeatherToday = () => {
     const {
         data: todayWeather,
         isSuccess,
+        isFetching,
+        isLoading,
+        isError
     } = useGetTodayWeatherQuery(activeCity);
+
+    if (isError || isFetching || isLoading) {
+        return (
+            <WeatherTodaySkeleton/>
+        )
+    }
 
     if (isSuccess) {
         const today = transformToday(todayWeather.list, todayWeather.city.timezone);
@@ -38,13 +47,7 @@ const WeatherToday = () => {
                 </div>
             </div>
         )
-
-    } else {
-        return (
-            <WeatherTodaySkeleton/>
-        )
     }
-
 }
 
 export default WeatherToday;

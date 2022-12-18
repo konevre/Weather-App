@@ -11,10 +11,19 @@ const WeatherForecast = () => {
 
     const { activeCity } = useSelector(state => state.weather);
 
-    const  {
+    const {
         data: forecastWeather,
         isSuccess,
+        isFetching,
+        isLoading,
+        isError
     } = useGetForecastWeatherQuery(activeCity);
+
+    if (isError || isFetching || isLoading) {
+        return (
+            <WeatherForecastSkeleton/>
+        )
+    }
 
     if (isSuccess) {
         const forecast = transformForecast(forecastWeather);
@@ -40,10 +49,6 @@ const WeatherForecast = () => {
             </div>
         )
         
-    } else {
-        return (
-            <WeatherForecastSkeleton/>
-        )
     }
 }
 

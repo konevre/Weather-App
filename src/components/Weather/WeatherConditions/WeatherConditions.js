@@ -19,7 +19,16 @@ const WeatherConditions = () => {
     const {
         data: currentWeather,
         isSuccess,
+        isFetching,
+        isLoading,
+        isError
     } = useGetCurrentWeatherQuery(activeCity);
+
+    if (isError || isFetching || isLoading) {
+        return (
+            <WeatherConditionsSkeleton/>
+        )
+    }
 
     if (isSuccess) {
         const { feel, wind, humidity, visibility } = transformCurrent(currentWeather);
@@ -49,10 +58,6 @@ const WeatherConditions = () => {
                     </div>
                 </div>
             </div>
-        )
-    } else {
-        return (
-            <WeatherConditionsSkeleton/>
         )
     }
 }

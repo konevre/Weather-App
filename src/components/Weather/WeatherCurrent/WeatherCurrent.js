@@ -10,24 +10,25 @@ import "./weatherCurrent.scss"
 const WeatherCurrent = () => {
 
     const { activeCity } = useSelector(state => state.weather);
-    // get current GEOLOCATION
-    // const successCallback = (position) => {
-    //     console.log(position);
-    //   };
-    //   const errorCallback = (error) => {
-    //     console.log(error);
-    //   };
-    // navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
 
     const {
         data: currentWeather,
         isSuccess,
+        isError,
+        isFetching,
+        isLoading
     } = useGetCurrentWeatherQuery(activeCity);
 
-    
+    if (isError || isFetching || isLoading) {
+        return (
+            <WeatherCurrentSkeleton/>
+        )
+    }
+
     if (isSuccess) {
         const { name, time, temp, icon } = transformCurrent(currentWeather);
         const path = icon ? icon : "00";
+        console.log(activeCity)
 
         return (
             <div className="weather__current">
@@ -41,11 +42,7 @@ const WeatherCurrent = () => {
                 </div>
             </div>
         )
-    } else {
-        return (
-            <WeatherCurrentSkeleton/>
-        )
-    }
+    } 
 }
 
 export default WeatherCurrent;

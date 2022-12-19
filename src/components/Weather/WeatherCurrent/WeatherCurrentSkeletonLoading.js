@@ -1,7 +1,6 @@
 import Skeleton from '@mui/material/Skeleton';
 
 const WeatherCurrentSkeletonLoading = () => {
-    console.log("load")
     return (
         <div className="weather__current">
             <div className="weather__current-wrapper">

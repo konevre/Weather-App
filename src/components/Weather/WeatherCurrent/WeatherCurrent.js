@@ -17,12 +17,13 @@ const WeatherCurrent = () => {
         isSuccess,
         isError,
         isFetching,
-        isLoading
+        isLoading,
+        error
     } = useGetCurrentWeatherQuery(activeCity);
 
     if (isError) {
         return (
-            <WeatherCurrentSkeletonError/>
+            <WeatherCurrentSkeletonError error={error}/>
         )
     }
 
@@ -37,8 +38,6 @@ const WeatherCurrent = () => {
     if (isSuccess) {
         const { name, time, temp, icon } = transformCurrent(currentWeather);
         const path = icon ? icon : "00";
-        console.log(activeCity)
-
         return (
             <div className="weather__current">
                 <div className="weather__current-wrapper">

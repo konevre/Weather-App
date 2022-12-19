@@ -16,9 +16,13 @@ const Transition = forwardRef(function Transition(props, ref) {
 });
 
 
-const WeatherCurrentSkeletonError = () => {
+const WeatherCurrentSkeletonError = ({error}) => {
+    
+    const errorDescr = error.status === 404 ? 
+        "Please write the name of the city without mistakes. Good luck!" : 
+        "We couldn't download data for you. Please, check your connection.";
+
     const [open, setOpen] = useState(true);
-    console.log("error")
     const handleClose = () => {
         setOpen(false);
     };
@@ -38,10 +42,10 @@ const WeatherCurrentSkeletonError = () => {
                     }
                 }}
             >
-                <DialogTitle sx={{color: "#DEE0E4"}}>{"Ooops... Are sure? 🫣"}</DialogTitle>
+                <DialogTitle sx={{color: "#DEE0E4"}}>{"Ooops... Something went wrong 🫣"}</DialogTitle>
                 <DialogContent >
                     <DialogContentText sx={{color: "#C3C4C3"}} id="alert-dialog-slide-description">
-                        Please write the name of the city without mistakes. Good luck!
+                        {errorDescr}
                     </DialogContentText>
                 </DialogContent>
                 <DialogActions>

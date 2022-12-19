@@ -3,7 +3,7 @@ const calcTime = (dt, offset) => {
     const utc = d.getTime() + (d.getTimezoneOffset() * 60000);
     const nd = new Date(utc + (3600000 * offset / 60 / 60));
     return nd.toLocaleTimeString().slice(0, -3)
-}
+};
 
 export const transformCurrent = (data) => {
     return {
@@ -16,7 +16,7 @@ export const transformCurrent = (data) => {
         visibility: data.visibility / 1000,
         time: calcTime(data.dt, data.timezone)
     }
-}
+};
 
 export const transformToday = (list, timezone) => {
     return list.slice(0, 6).map(item => {
@@ -27,12 +27,12 @@ export const transformToday = (list, timezone) => {
             icon: item.weather[0].icon
         }
     })
-}
+};
 
 export const transformForecast = (data) => {
-    const list = data.list.filter((_, i) => i === 0 || i % 8 === 0 );
-    const days = ['Mon','Tue','Wed','Thu','Fri','Sat', 'Sun']
-
+    const list = data.list.filter(item => item.dt_txt.slice(-8) === "15:00:00");
+    const days = ['Mon','Tue','Wed','Thu','Fri','Sat', 'Sun'];
+    
     return list.map(item => {
         return {
             temp: Math.round(item.main.temp),
@@ -41,5 +41,4 @@ export const transformForecast = (data) => {
             date: days[new Date(item.dt * 1000).getDay()]
         }
     })
-    
 }

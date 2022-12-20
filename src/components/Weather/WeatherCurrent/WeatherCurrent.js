@@ -3,8 +3,7 @@ import { useSelector } from "react-redux";
 import { transformCurrent } from "../../../utils/utils";
 import { useGetCurrentWeatherQuery } from "../../../api/apiSlice";
 
-import WeatherCurrentSkeletonLoading from "./WeatherCurrentSkeletonLoading";
-import WeatherCurrentSkeletonError from "./WeatherCurrentSkeletonError";
+import WeatherCurrentSkeleton from "./WeatherCurrentSkeleton";
 
 import "./weatherCurrent.scss"
 
@@ -23,17 +22,15 @@ const WeatherCurrent = () => {
 
     if (isError) {
         return (
-            <WeatherCurrentSkeletonError error={error}/>
+            <WeatherCurrentSkeleton error={error}/>
         )
     }
 
     if (isFetching || isLoading) {
         return (
-            <WeatherCurrentSkeletonLoading/>
+            <WeatherCurrentSkeleton/>
         )
     }
-
-    
 
     if (isSuccess) {
         const { name, time, temp, icon } = transformCurrent(currentWeather);

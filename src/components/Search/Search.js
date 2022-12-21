@@ -12,7 +12,6 @@ const Search = () => {
         const city = e.target.search.value;
         dispatch(makeActive(city));
         e.target.reset();
-
     }
 
     return (

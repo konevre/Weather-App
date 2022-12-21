@@ -7,79 +7,9 @@
     column-gap: 5vh;
 }
 
-.cities__wrapper {
-    height: 80.6vh;
-    display: grid;
-    grid-template-columns: 51vw;
-    grid-template-rows: 15vh;
-    grid-auto-rows: 15vh;
-    row-gap: 2.8vh;
-    margin-top: 3vh;
-    overflow-y:auto;
-}
-
-.cities__item {
-    width: 51vw;
-    height: 15vh;
-    background: $space-dark;
-    border-radius: 30px;
-    display: grid;
-    grid-template-columns: 13vw 26vw 7vw 5vw;
-
-    &-name {
-        font-weight: 500;
-        font-size: 40px;
-        color: $white;
-    }
-
-    
-    
-    img.cities__item-img {
-        height: inherit;
-    }
-
-    &-descr {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    &-time {
-        font-weight: 400;
-        font-size: 16px;
-        color: $grey;
-    }
-
-    &-temp {
-        display: flex;
-        align-items: center;
-        font-weight: 700;
-        font-size: 50px;
-        color: $white;
-    }
-
-    img.cities__item-delete {
-        margin-top: 15px;
-        margin-left: 25px;
-        height: 24px;
-        width: 24px;
-        cursor: pointer;
-
-        
-    }
-}
-
 .cities__weather {
     margin-top: 10vh;
     width: 33vw;
     display: flex;
     flex-direction: column;
-
-    // .divider {
-    //     margin-top: 2vh;
-    //     margin-bottom: 1.5vh;
-    //     height: 0.2vh;
-    //     background: $space-light;
-    // }
-    
 }

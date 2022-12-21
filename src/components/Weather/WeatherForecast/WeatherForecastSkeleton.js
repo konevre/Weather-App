@@ -1,22 +1,22 @@
 import Skeleton from '@mui/material/Skeleton';
 
-const WeatherForecastSkeleton = () => {
+const WeatherForecastSkeleton = ({number, size}) => {
 
     const content = []
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < number; i++) {
         content.push(
-            <div className="weather__forecast-item" key={i}>
-                <Skeleton sx={{ bgcolor: '#35455E', fontSize: "2.2vh", width: "3vw" }} />
-                <Skeleton variant="circular" sx={{ bgcolor: '#35455E', width: "5.2vw", height: "9vh" }} />
-                <Skeleton sx={{ bgcolor: '#35455E', fontSize: "2.2vh", width: "3.7vw" }} />
-                <Skeleton sx={{ bgcolor: '#35455E', fontSize: "2.2vh", width: "3.7vw" }} />
+            <div className="weather__forecast-item skeleton" key={i}>
+                <Skeleton className="weather__forecast-day skeleton" />
+                <Skeleton className="weather__forecast-img skeleton" variant="circular" />
+                <Skeleton className="weather__forecast-descr skeleton" />
+                <Skeleton className="weather__forecast-temp skeleton" />
             </div>
         )
     }
 
     return (
-        <div className="weather__forecast">
-            <div className="weather__forecast-title">5-DAY FORECAST</div>
+        <div className={`weather__forecast ${size}`}>
+            <div className={`weather__forecast-title ${size}`}>5-DAY FORECAST</div>
             <div className="weather__forecast-wrapper">
                 {content}
             </div>

@@ -1,18 +1,36 @@
 @import "../../../style/variables.scss";
 
 .weather__forecast {
-    margin-top: 14vh;
-    width: 31vw;
-    height: 80vh;
-    background: $space-dark;
+    // width: 31vw;
+
+    &.lg {
+        margin-top: 14vh;
+        background: $space-dark;
+        height: 80vh;
+    }
+
+    &.sm {
+        margin-top: 1vh;
+    }
+
     border-radius: 30px;
 
     &-title {
         font-weight: 700;
         font-size: 1.9vh;
         color: $grey;
-        margin-top: 3vh;
-        margin-left: 3vh;
+       
+        
+
+        &.sm {
+            margin-top: 3vh;
+            margin-left: 0;
+        }
+
+        &.lg {
+            margin-top: 3vh;
+            margin-left: 3vh;
+        }
     }
 
     &-wrapper {
@@ -21,23 +39,30 @@
     }
 
     &-item {
+
+        &.skeleton {
+            height: 7.3vh;
+        }
+
+        &.lg {
+            height: 10.3vh;
+        }
+        &.sm {
+            height: 7.3vh;
+        }
+
         height: 10.3vh;
-        margin-top: 3.8vh;
+        margin-top: 3.5vh;
         position: relative;
         display: flex;
         align-items: center;
-        justify-content: space-evenly;
-
-        img {
-            width: 5.5vw;
-            
-        }
+        justify-content: space-around;
 
         &:after {
             content: "";
             position: absolute;
             bottom: -2.2vh;
-            width: 26.2vw;
+            width: 85%;
             height: 0.35vh;
             background: $space-light;
         }
@@ -48,11 +73,33 @@
         }
     }
 
+    &-img {
+        &.lg {
+            width: 6vw;
+        }
+        &.sm {
+            width: 4vw;
+        }
+
+        &.skeleton {
+            background-color: #35455E;
+            width: 3vw;
+            height: 5.5vh;
+        }
+    }
+
     &-day {
         width: 3.7vw;
         font-weight: 400;
         font-size: 2.2vh;
         color: $grey;
+        text-align: center;
+
+        &.skeleton {
+            background-color: #35455E;
+            font-size: "2.2vh";
+            width: "3vw";
+        }
     }
 
     &-descr {
@@ -61,12 +108,26 @@
         font-size: 2.2vh;
         width: 7vw;
         color: $white;
+
+        &.skeleton {
+            background-color: $space-light; 
+            font-size: 2.2vh;
+            width: 3.7vw;
+        }
     }
 
     &-temp {
         font-weight: 400;
         font-size: 2.2vh;
         color: $grey;
+        width: 2vw;
+        text-align: center;
+
+        &.skeleton {
+            background-color: $space-light; 
+            font-size: 2.2vh;
+            width: 3.7vw;
+        }
 
         span {
             font-weight: 500;

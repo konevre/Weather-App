@@ -2,7 +2,7 @@
 
 .cities-grid {
     display: grid;
-    grid-template-columns: 9vw 51vw 40vw;
+    grid-template-columns: 9vw 51vw 33vw;
     grid-template-rows: 100vh;
     column-gap: 5vh;
 }
@@ -70,7 +70,16 @@
 }
 
 .cities__weather {
-    margin-top: 14vh;
-    width: 34vw;
+    margin-top: 10vh;
+    width: 33vw;
+    display: flex;
+    flex-direction: column;
+
+    // .divider {
+    //     margin-top: 2vh;
+    //     margin-bottom: 1.5vh;
+    //     height: 0.2vh;
+    //     background: $space-light;
+    // }
     
 }

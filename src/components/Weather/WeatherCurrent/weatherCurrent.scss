@@ -2,13 +2,22 @@
 
 
 .weather__current {
+
+    &.sm {
+        margin-left: 0;
+    }
+
+    &.lg {
+        margin-left: 4vh;
+    }
+
     display: grid;
     grid-template-columns: auto auto;
     grid-template-rows: 12.5vh 13vh;
+    margin-left: 4vh;
 
     &-city {
         margin-top: 3vh;
-        margin-left: 4vh;
         font-weight: 500;
         font-size: 5vh;
         color: $white;
@@ -18,7 +27,6 @@
         font-weight: 500;
         font-size: 2vh;
         margin-top: 1vh;
-        margin-left: 4vh;
         color: $grey;
     }
 
@@ -26,7 +34,6 @@
         font-weight: 700;
         font-size: 7vh;
         align-self: end;
-        margin-left: 4vh;
         color: $white;
     }
 

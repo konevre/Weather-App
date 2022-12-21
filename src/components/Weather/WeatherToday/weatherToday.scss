@@ -1,7 +1,15 @@
 @import "../../../style/variables.scss";
 
 .weather__today {
-    background: $space-dark;
+
+    &.sm {
+        background: none;
+    }
+
+    &.lg {
+        background: $space-dark;
+    }
+
     border-radius: 30px;
 
     &-title {
@@ -9,14 +17,31 @@
         font-size: 1.9vh;
         color: $grey;
         margin-top: 3vh;
-        margin-left: 3vh;
+        
+
+        &.sm {
+            margin-left: 0;
+            margin-top: 3vh;
+        }
+        &.lg {
+            margin-top: 3vh;
+            margin-left: 3vh;
+        }
     }
 
     &-forecast {
         display: flex;
         margin-top: 1vh;
-        margin-left: 2.3vh;
-        margin-right: 2.3vh;
+
+        &.lg {
+            margin-left: 2.3vh;
+            margin-right: 2.3vh;
+        }
+
+        &.sm {
+            margin-left: 0;
+            margin-right: 0;
+        }
     }
 
     &-item {
@@ -47,6 +72,12 @@
         font-weight: 700;
         font-size: 2vh;
         color: $grey;
+
+        &.skeleton {
+            background-color: $space-light;
+            font-size: 2vh;
+            width: 40%;
+        }
     }
 
     &-temp {
@@ -54,9 +85,31 @@
         margin-top: 1vh;
         font-size: 2.5vh;
         color: $white;
+
+        &.skeleton {
+            margin-top: 1vh;
+            font-size: 2vh;
+            background-color: #35455E;
+            width: 40%;
+        }
     }
 
-    img {
-        width: 10vh;
+    &-img {
+
+        &.skeleton {
+            margin-top: 1vh;
+            background-color: $space-light;
+            width: 6.8vh; 
+            height: 6.8vh;
+        }
+
+        &.lg {
+            width: 6vw;
+        }
+        &.sm {
+            width: 4vw;
+        }
     }
+
+    
 }

@@ -7,7 +7,7 @@ import WeatherCurrentSkeleton from "./WeatherCurrentSkeleton";
 
 import "./weatherCurrent.scss"
 
-const WeatherCurrent = () => {
+const WeatherCurrent = ({size}) => {
 
     const { activeCity } = useSelector(state => state.weather);
 
@@ -36,7 +36,7 @@ const WeatherCurrent = () => {
         const { name, time, temp, icon } = transformCurrent(currentWeather);
         const path = icon ? icon : "00";
         return (
-            <div className="weather__current">
+            <div className={`weather__current ${size}`}>
                 <div className="weather__current-wrapper">
                     <div className="weather__current-city">{name}</div>
                     <div className="weather__current-rain">Last update: {time}</div>

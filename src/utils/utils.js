@@ -18,8 +18,8 @@ export const transformCurrent = (data) => {
     }
 };
 
-export const transformToday = (list, timezone) => {
-    return list.slice(0, 6).map(item => {
+export const transformToday = (list, timezone, number) => {
+    return list.slice(0, number).map(item => {
         return {
             temp: Math.round(item.main.temp),
             descr: item.weather[0].main,
@@ -29,8 +29,9 @@ export const transformToday = (list, timezone) => {
     })
 };
 
-export const transformForecast = (data) => {
-    const list = data.list.filter(item => item.dt_txt.slice(-8) === "15:00:00");
+export const transformForecast = (data, number = 5) => {
+    const filtered = data.list.filter(item => item.dt_txt.slice(-8) === "15:00:00");
+    const list = number <= 5 ? filtered.slice(0, number) : filtered.slice(0, 5);
     const days = ['Mon','Tue','Wed','Thu','Fri','Sat', 'Sun'];
     
     return list.map(item => {

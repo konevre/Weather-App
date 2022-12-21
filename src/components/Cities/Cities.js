@@ -2,6 +2,7 @@ import Search from "../Search/Search";
 import Sidebar from "../Sidebar/Sidebar";
 import WeatherCurrent from "../Weather/WeatherCurrent/WeatherCurrent";
 import WeatherToday from "../Weather/WeatherToday/WeatherToday";
+import WeatherForecast from "../Weather/WeatherForecast/WeatherForecast";
 
 import icon from "../../resources/weather-icons/01d.svg";
 import close from "../../resources/close.svg";
@@ -35,8 +36,11 @@ const Cities = () => {
                 </div>
             </div>
             <div className="cities__weather">
-                {/* <WeatherCurrent/>
-                <WeatherToday/> */}
+                <WeatherCurrent size="sm"/>
+                <div className="divider"></div>
+                <WeatherToday number={4} size="sm"/>
+                <div className="divider"></div>
+                <WeatherForecast number={3} size="sm"/>
             </div>
         </div>
     )

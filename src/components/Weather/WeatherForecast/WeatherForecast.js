@@ -7,7 +7,7 @@ import WeatherForecastSkeleton from "./WeatherForecastSkeleton";
 
 import "./weatherForecast.scss";
 
-const WeatherForecast = () => {
+const WeatherForecast = ({size, number}) => {
 
     const { activeCity } = useSelector(state => state.weather);
 
@@ -21,19 +21,19 @@ const WeatherForecast = () => {
 
     if (isError || isFetching || isLoading) {
         return (
-            <WeatherForecastSkeleton/>
+            <WeatherForecastSkeleton number={number} size={size}/>
         )
     }
 
     if (isSuccess) {
-        const forecast = transformForecast(forecastWeather);
+        const forecast = transformForecast(forecastWeather, number);
 
         const items = forecast.map((item, i) => {
             const { temp, icon, descr, date } = item;
             return (
-                <div className="weather__forecast-item" key={i}>
+                <div className={`weather__forecast-item ${size}`} key={i}>
                     <div className="weather__forecast-day">{date}</div>
-                    <img src={require(`../../../resources/weather-icons/${icon}d.svg`)} alt="weather__icon" />
+                    <img className={`weather__forecast-img ${size}`} src={require(`../../../resources/weather-icons/${icon}d.svg`)} alt="weather__icon" />
                     <div className="weather__forecast-descr">{descr}</div>
                     <div className="weather__forecast-temp"><span>{temp}</span></div>
                 </div>
@@ -41,8 +41,8 @@ const WeatherForecast = () => {
         })
 
         return (
-            <div className="weather__forecast">
-                <div className="weather__forecast-title">5-DAY FORECAST</div>
+            <div className={`weather__forecast ${size}`}>
+                <div className={`weather__forecast-title ${size}`}>5-DAY FORECAST</div>
                 <div className="weather__forecast-wrapper">
                     {items}
                 </div>

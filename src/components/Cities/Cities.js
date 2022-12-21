@@ -11,8 +11,6 @@ import "./cities.scss";
 
 const Cities = () => {
 
-    
-
     return (
         <div className="cities-grid">
             <Sidebar />
@@ -21,9 +19,9 @@ const Cities = () => {
                 <CitiesList/>
             </div>
             <div className="cities__weather">
-                <WeatherCurrent size="sm"/>
-                <WeatherToday number={4} size="sm"/>
-                <WeatherForecast number={3} size="sm"/>
+                <WeatherCurrent size="sm" page="cities"/>
+                <WeatherToday number={4} size="sm" page="cities"/>
+                <WeatherForecast number={3} size="sm" page="cities"/>
             </div>
         </div>
     )

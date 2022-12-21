@@ -19,6 +19,11 @@
     display: grid;
     grid-template-columns: 13vw 26vw 7vw 5vw;
 
+    &.active {
+        background: #0B131E;
+        border: 3px solid #0561A5;
+    }
+
     &-name {
         font-weight: 500;
         font-size: 40px;

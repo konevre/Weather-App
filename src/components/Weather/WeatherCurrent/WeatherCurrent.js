@@ -7,9 +7,12 @@ import WeatherCurrentSkeleton from "./WeatherCurrentSkeleton";
 
 import "./weatherCurrent.scss"
 
-const WeatherCurrent = ({size}) => {
+const WeatherCurrent = ({size, page}) => {
 
     const { activeCity } = useSelector(state => state.weather);
+    const { activeFilter } = useSelector(state => state.cities);
+    
+    const cityQuery = page === "cities" ? activeFilter : activeCity;
 
     const {
         data: currentWeather,
@@ -18,7 +21,7 @@ const WeatherCurrent = ({size}) => {
         isFetching,
         isLoading,
         error
-    } = useGetCurrentWeatherQuery(activeCity);
+    } = useGetCurrentWeatherQuery(cityQuery);
 
     if (isError) {
         return (

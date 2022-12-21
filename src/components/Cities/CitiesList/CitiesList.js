@@ -1,5 +1,8 @@
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import classNames from 'classnames';
+
 import { useGetCurrentWeatherQuery } from "../../../api/apiSlice";
+import { filterActive } from "../CitiesSlice";
 
 import { transformCurrent } from "../../../utils/utils";
 
@@ -9,8 +12,8 @@ import close from "../../../resources/close.svg";
 import "./citiesList.scss";
 
 const CitiesList = () => {
-
-    const { cities } = useSelector(state => state.cities);
+    const dispatch = useDispatch();
+    const { cities, activeFilter } = useSelector(state => state.cities);
 
     if (cities.length > 0) {
         const items = cities.map((item, i) => {
@@ -22,8 +25,11 @@ const CitiesList = () => {
 
             if (isSuccess) {
                 const { name, temp, time, icon } = transformCurrent(currentWeather);
+                const itemClass = classNames('cities__item', {
+                    'active': name === activeFilter
+                });
                 return (
-                    <div key={i} className="cities__item">
+                    <div key={i} className={itemClass} onClick={() => dispatch(filterActive(name))}>
                         <img src={require(`../../../resources/weather-icons/${icon}.svg`)} alt="weather__img" className="cities__item-img" />
                         <div className="cities__item-descr">
                             <div className="cities__item-name">{name}</div>

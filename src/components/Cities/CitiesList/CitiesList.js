@@ -3,10 +3,10 @@ import classNames from 'classnames';
 
 import { useGetCurrentWeatherQuery } from "../../../api/apiSlice";
 import { filterActive } from "../CitiesSlice";
+import CitiesListSkeleton from "./CitiesListSkeleton";
 
 import { transformCurrent } from "../../../utils/utils";
 
-// import icon from "../../../resources/weather-icons/01d.svg";
 import close from "../../../resources/close.svg";
 
 import "./citiesList.scss";
@@ -41,7 +41,7 @@ const CitiesList = () => {
                 )
             } else {
                 // TODO
-                return <h2 key={i}>ERROR / LOADING</h2>;
+                return <CitiesListSkeleton key={i}/>
             }
         })
 

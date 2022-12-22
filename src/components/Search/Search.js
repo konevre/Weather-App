@@ -1,10 +1,22 @@
 import { makeActive } from "../Weather/weatherSlice";
 import { addCity } from "../Cities/CitiesSlice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import "./search.scss"
 
 const Search = ({page}) => {
+
+    const { cities } = useSelector(state => state.cities);
+    const checkCities = (list, city) => {
+        return list.includes(city)
+    }
+
+    const submitHandler = (page, list, city) => {
+        page === "cities" ? 
+            checkCities(list, city) ? console.log("ALREADY EXIST") :  dispatch(addCity(city)) :
+        dispatch(makeActive(city))
+
+    }
 
     const dispatch = useDispatch();
 
@@ -12,7 +24,7 @@ const Search = ({page}) => {
         e.preventDefault()
         const city = e.target.search.value;
 
-        page === "cities" ? dispatch(addCity(city)) : dispatch(makeActive(city));
+        submitHandler(page, cities, city)
 
         e.target.reset();
     }

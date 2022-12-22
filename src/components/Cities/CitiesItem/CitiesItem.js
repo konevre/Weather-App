@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 import classNames from 'classnames';
 
 import { useGetCurrentWeatherQuery } from "../../../api/apiSlice";
-import { filterActive } from "../CitiesSlice";
+import { filterActive, deleteCity } from "../CitiesSlice";
 import CitiesItemSkeleton from "./CitiesItemSkeleton";
 
 import { transformCurrent } from "../../../utils/utils";
@@ -19,6 +19,12 @@ const CitiesItem = ({item}) => {
         isSuccess
     } = useGetCurrentWeatherQuery(item)
 
+    const onDelete = (e, name) => {
+        e.stopPropagation();
+        dispatch(deleteCity(name));
+        dispatch(filterActive(null));
+    }
+
     if (isSuccess) {
         const { name, temp, time, icon } = transformCurrent(currentWeather);
         const itemClass = classNames('cities__item', {
@@ -32,7 +38,11 @@ const CitiesItem = ({item}) => {
                     <div className="cities__item-time">{time}</div>
                 </div>
                 <div className="cities__item-temp">{temp}°</div>
-                <img src={close} alt="close" className="cities__item-delete" />
+                <img 
+                    src={close} 
+                    alt="close" 
+                    className="cities__item-delete" 
+                    onClick={(e) => onDelete(e, name)}/>
             </div>
         )
     } else {

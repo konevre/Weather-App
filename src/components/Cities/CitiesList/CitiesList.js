@@ -1,17 +1,13 @@
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
-import { citiesReceived } from "../CitiesSlice";
 import CitiesItem from "../CitiesItem/CitiesItem";
-import { filterActive, citiesSelector } from "../CitiesSlice";
 
 import "./citiesList.scss";
 
 const CitiesList = () => {
 
-    const cities = useSelector(citiesSelector);
+    const { cities } = useSelector(state => state.cities)
     console.log(cities)
-
-    const dispatch = useDispatch();
 
     if (cities.length === 0) {
         return  (
@@ -22,7 +18,7 @@ const CitiesList = () => {
     }
 
     const items = cities.map((item, i) => {
-        return <CitiesItem item={item.name} key={i}/>
+        return <CitiesItem item={item} key={i}/>
     })
 
     return (

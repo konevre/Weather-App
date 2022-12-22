@@ -1,16 +1,19 @@
 import { makeActive } from "../Weather/weatherSlice";
+import { filterActive } from "../Cities/CitiesSlice";
 import { useDispatch } from "react-redux";
 
 import "./search.scss"
 
-const Search = () => {
+const Search = ({page}) => {
 
     const dispatch = useDispatch();
 
     const submitSearch = (e) => {
         e.preventDefault()
         const city = e.target.search.value;
-        dispatch(makeActive(city));
+
+        page === "cities" ? dispatch(filterActive(city)) : dispatch(makeActive(city));
+
         e.target.reset();
     }
 

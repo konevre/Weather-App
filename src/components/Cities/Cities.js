@@ -15,7 +15,7 @@ const Cities = () => {
         <div className="cities-grid">
             <Sidebar />
             <div>
-                <Search />
+                <Search page="cities"/>
                 <CitiesList/>
             </div>
             <div className="cities__weather">

@@ -1,7 +1,9 @@
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { useEffect } from "react"; 
 
 import { transformCurrent } from "../../../utils/utils";
 import { useGetCurrentWeatherQuery } from "../../../api/apiSlice";
+import { addCity, citiesSelector } from "../../Cities/CitiesSlice";
 
 import WeatherCurrentSkeleton from "./WeatherCurrentSkeleton";
 
@@ -11,6 +13,8 @@ const WeatherCurrent = ({size, page}) => {
 
     const { activeCity } = useSelector(state => state.weather);
     const { activeFilter } = useSelector(state => state.cities);
+    const cities = useSelector(citiesSelector);
+    const dispatch = useDispatch();
     
     const cityQuery = page === "cities" ? activeFilter : activeCity;
 
@@ -23,6 +27,14 @@ const WeatherCurrent = ({size, page}) => {
         error
     } = useGetCurrentWeatherQuery(cityQuery);
 
+    useEffect(() => {
+        
+        if (isSuccess) {
+            dispatch(addCity(transformCurrent(currentWeather)))
+        }
+        
+    }, [cities])
+
     if (isError) {
         return (
             <WeatherCurrentSkeleton error={error}/>
@@ -34,6 +46,8 @@ const WeatherCurrent = ({size, page}) => {
             <WeatherCurrentSkeleton/>
         )
     }
+
+    
 
     if (isSuccess) {
         const { name, time, temp, icon } = transformCurrent(currentWeather);

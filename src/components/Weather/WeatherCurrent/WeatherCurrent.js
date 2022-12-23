@@ -24,9 +24,11 @@ const WeatherCurrent = ({size, page}) => {
     } = useGetCurrentWeatherQuery(cityQuery);
 
     if (isError) {
-        return (
-            <WeatherCurrentSkeleton error={error}/>
-        )
+        const content = activeFilter ? 
+                        <WeatherCurrentSkeleton error={error}/> :
+                        <WeatherCurrentSkeleton/> ;
+                        
+        return content;
     }
 
     if (isFetching || isLoading) {
@@ -34,9 +36,7 @@ const WeatherCurrent = ({size, page}) => {
             <WeatherCurrentSkeleton/>
         )
     }
-
     
-
     if (isSuccess) {
         const { name, time, temp, icon } = transformCurrent(currentWeather);
         const path = icon ? icon : "00";

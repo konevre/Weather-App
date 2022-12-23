@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import { Reorder } from "framer-motion"
 import { useState } from "react";
 
+import WeatherError from "../../Weather/WeatherCurrent/WeatherError";
 import { useGetCurrentWeatherQuery } from "../../../api/apiSlice";
 import { filterActive, deleteCity } from "../CitiesSlice";
 import CitiesItemSkeleton from "./CitiesItemSkeleton";
@@ -22,6 +23,7 @@ const CitiesItem = ({item}) => {
         isSuccess,
         isLoading,
         isError,
+        error
     } = useGetCurrentWeatherQuery(item)
 
     const onDelete = (e, name) => {
@@ -35,7 +37,8 @@ const CitiesItem = ({item}) => {
     if (isError) {
         setTimeout(() => {
             dispatch(deleteCity(item));
-        }, 400) 
+        }, 5000) 
+        return <WeatherError error={error}/> 
     }
 
     if (isLoading) {

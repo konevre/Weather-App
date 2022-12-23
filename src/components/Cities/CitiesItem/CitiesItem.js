@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import classNames from 'classnames';
 import { Reorder } from "framer-motion"
-
+import { useState } from "react";
 
 import { useGetCurrentWeatherQuery } from "../../../api/apiSlice";
 import { filterActive, deleteCity } from "../CitiesSlice";
@@ -15,10 +15,13 @@ import "./citiesItem.scss";
 const CitiesItem = ({item}) => {
     const dispatch = useDispatch();
     const { activeFilter } = useSelector(state => state.cities);
+    const [ isDragging, setDragging ] = useState(false);
 
     const {
         data: currentWeather,
-        isSuccess
+        isSuccess,
+        isLoading,
+        isError,
     } = useGetCurrentWeatherQuery(item)
 
     const onDelete = (e, name) => {
@@ -29,18 +32,35 @@ const CitiesItem = ({item}) => {
         }
     }
 
+    if (isError) {
+        setTimeout(() => {
+            dispatch(deleteCity(item));
+        }, 400) 
+    }
+
+    if (isLoading) {
+        return <CitiesItemSkeleton/>
+    }
+
     if (isSuccess) {
         const { name, temp, time, icon } = transformCurrent(currentWeather);
         const itemClass = classNames('cities__item', {
             'active': name === activeFilter
         });
-        
+
         return (
             <Reorder.Item
                 as="div"
                 value={item}
                 className={itemClass}
-                onClick={() => dispatch(filterActive(name))}
+                onClick={() => {
+                    if (!isDragging) {
+                        dispatch(filterActive(name))
+                    }
+                }}
+                whileDrag={{scale: 0.95}}
+                onDragStart={() => setDragging(true)}
+                onDragEnd={() => setTimeout(() => setDragging(false), 400)}
             >
                     <img src={require(`../../../resources/weather-icons/${icon}.svg`)} alt="weather__img" className="cities__item-img" />
                     <div className="cities__item-descr">
@@ -55,10 +75,7 @@ const CitiesItem = ({item}) => {
                         onClick={(e) => onDelete(e, name)}/>
             </Reorder.Item>
         )
-    } else {
-        // TODO
-        return <CitiesItemSkeleton />
-    }
+    } 
 }
 
 export default CitiesItem;

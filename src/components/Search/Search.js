@@ -7,6 +7,8 @@ import "./search.scss"
 const Search = ({page}) => {
 
     const { cities } = useSelector(state => state.cities);
+    const dispatch = useDispatch();
+
     const checkCities = (list, city) => {
         return list.includes(city)
     }
@@ -17,8 +19,6 @@ const Search = ({page}) => {
         dispatch(makeActive(city))
 
     }
-
-    const dispatch = useDispatch();
 
     const submitSearch = (e) => {
         e.preventDefault()

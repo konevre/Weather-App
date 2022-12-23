@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Reorder } from "framer-motion"
 
@@ -10,31 +9,17 @@ import "./citiesList.scss";
 const CitiesList = () => {
 
     const { cities } = useSelector(state => state.cities)
-    const [ dndCities, setDnDCities ] = useState(cities)
     const dispatch = useDispatch();
+    console.log(cities)
 
-    console.log("REDUX: ", cities);
-    console.log("DND: ", dndCities);
-
-    useEffect(() => {
-        dispatch(updateCities(dndCities))
-    }, [dndCities])
-
-    useEffect(() => {
-        setDnDCities(cities);
-    }, [cities])
-
-    console.log("render",)
-
-    if (dndCities.length === 0) {
+    if (cities.length === 0) {
         return  (
-            // TODO
-            <h2>NO CITIES ADDED</h2>
+            <div className="empty">Please, search for any city <span>🔍</span></div>
         )
         
     }
 
-    const items = dndCities.map(item => {
+    const items = cities.map(item => {
             return <CitiesItem item={item} key={item}/>
         }
     )
@@ -45,8 +30,8 @@ const CitiesList = () => {
             layoutScroll
             className="cities__wrapper" 
             as="div" 
-            values={dndCities}
-            onReorder={setDnDCities}
+            values={cities}
+            onReorder={(state) => dispatch(updateCities(state))}
         >
             {items}
         </Reorder.Group>

@@ -7,7 +7,6 @@ const calcTime = (dt, offset) => {
 
 export const transformCurrent = (data) => {
     return {
-        id: data.id,
         name: data.name,
         temp: Math.round(data.main.temp),
         feel: Math.round(data.main.feels_like),
@@ -44,3 +43,7 @@ export const transformForecast = (data, number = 5) => {
         }
     })
 }
+
+export const transformCoords = (data) => {
+    return [data.coord.lat, data.coord.lon]
+};

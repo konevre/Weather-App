@@ -6,7 +6,7 @@ import { updateCities } from "../CitiesSlice";
 
 import "./citiesList.scss";
 
-const CitiesList = () => {
+const CitiesList = ({size}) => {
 
     const { cities } = useSelector(state => state.cities)
     const dispatch = useDispatch();
@@ -20,7 +20,7 @@ const CitiesList = () => {
     }
 
     const items = cities.map(item => {
-            return <CitiesItem item={item} key={item}/>
+            return <CitiesItem item={item} key={item} size={size}/>
         }
     )
 

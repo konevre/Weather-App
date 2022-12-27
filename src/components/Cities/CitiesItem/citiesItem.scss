@@ -9,6 +9,10 @@
     grid-template-columns: 13vw 26vw 7vw 5vw;
     cursor: grab;
 
+    &.sm {
+        width: 33vw;
+    }
+
     &.active {
         background: #0B131E;
         border: 2px solid #0561A5;

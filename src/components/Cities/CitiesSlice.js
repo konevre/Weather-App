@@ -1,9 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+
 const initialState = {
     activeFilter: "Madrid",
-    cities: ["Madrid", "Moscow", "Bari", "Novosibirsk"]
+    cities: ["Madrid", "Moscow", "Bari", "Novosibirsk"],
+    coords: []
 }
+// [40.4165, -3.7026], [55.7522, 37.6156], [55.0411, 82.9344], [41.1177, 16.8512]
 
 const citiesSlice = createSlice({
     name: "cities", 
@@ -14,7 +17,9 @@ const citiesSlice = createSlice({
         deleteCity: (state, action) => { 
             state.cities = state.cities.filter(item => item !== action.payload) 
         },
-        updateCities: (state, action) => { state.cities = action.payload }
+        updateCities: (state, action) => { state.cities = action.payload },
+        addCoords: (state, action) => { state.coords.push(action.payload) },
+
     }
 });
 
@@ -26,5 +31,6 @@ export const {
     filterActive,
     addCity,
     deleteCity,
-    updateCities
+    updateCities,
+    addCoords
 } = actions;

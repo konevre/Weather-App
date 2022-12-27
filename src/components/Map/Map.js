@@ -1,6 +1,7 @@
 import Sidebar from "../Sidebar/Sidebar";
 import Search from "../Search/Search";
 import WeatherMap from "./WeatherMap/WeatherMap";
+import CitiesList from "../Cities/CitiesList/CitiesList";
 
 const Map = () => {
     return (
@@ -11,7 +12,7 @@ const Map = () => {
                 <WeatherMap/>
             </div>
             <div className="cities__weather">
-                
+                <CitiesList size="sm"/>
             </div>
         </div>
     )

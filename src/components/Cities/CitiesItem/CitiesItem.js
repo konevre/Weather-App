@@ -13,7 +13,7 @@ import { transformCurrent } from "../../../utils/utils";
 import close from "../../../resources/close.svg";
 import "./citiesItem.scss";
 
-const CitiesItem = ({item}) => {
+const CitiesItem = ({item, size}) => {
     const dispatch = useDispatch();
     const { activeFilter } = useSelector(state => state.cities);
     const [ isDragging, setDragging ] = useState(false);
@@ -46,9 +46,10 @@ const CitiesItem = ({item}) => {
     }
 
     if (isSuccess) {
-        const { name, temp, time, icon } = transformCurrent(currentWeather);
+        const { name, temp, time, icon, coords } = transformCurrent(currentWeather);
         const itemClass = classNames('cities__item', {
-            'active': name === activeFilter
+            'active': name === activeFilter,
+            'sm': size === "sm",
         });
 
         return (

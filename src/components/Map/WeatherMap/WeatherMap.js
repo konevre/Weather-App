@@ -1,30 +1,49 @@
-import { MapContainer, TileLayer, Marker } from 'react-leaflet'
+import { MapContainer, TileLayer, useMap } from 'react-leaflet'
+import { useSelector } from "react-redux";
+import { useGetCurrentWeatherQuery } from "../../../api/apiSlice";
 
-
+import { transformCoords } from '../../../utils/utils';
+import MarkerCustom from '../MarkerCustom/MarkerCustom';
 import "./weatherMap.scss"
 
+const MapHelper = ({location}) => {
+    const map = useMap();
+    map.flyTo(location);
+    return <></>
+}
+
 const WeatherMap = () => {
-    const zoom = 3,
-          lat = 55.0411,
-          lon = 82.9344;
+    const { cities, activeFilter } = useSelector(state => state.cities);
 
+    const {
+        data: location,
+        isSuccess
+    } = useGetCurrentWeatherQuery(activeFilter)
 
-    return (
-        <MapContainer 
-            center={[lat, lon]} 
-            zoom={zoom} 
-            scrollWheelZoom={false}
-            // dragging={false}
-        >
-            <TileLayer
-                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"   
-            />
-            <Marker position={[55.7522, 37.6156]}/>
-            <Marker position={[55.0411, 82.9344]}/>
-            <Marker position={[41.1177, 16.8512]}/>
-        </MapContainer>
-    )
+    const markers = cities.map(item => {
+        return <MarkerCustom item={item} key={item}/>
+    })
+
+    if (isSuccess) {
+        const position = transformCoords(location);
+        const zoom = 3;
+
+        return (
+            <MapContainer 
+                center={position} 
+                zoom={zoom} 
+            >
+                <TileLayer
+                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                    url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"   
+                />
+                {markers}
+            <MapHelper location={position}/>
+            </MapContainer>
+        )
+    } else {
+        return null
+    }
 }
 
 export default WeatherMap;

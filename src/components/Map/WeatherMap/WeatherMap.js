@@ -12,6 +12,24 @@ const MapHelper = ({location}) => {
     return <></>
 }
 
+const MapBase = ({position, markers}) => {
+    const location = position ? position : [40.4165, -3.7026]
+    const helper = position ? <MapHelper location={location}/> : null
+    return (
+        <MapContainer
+            center={location}
+            zoom={3}
+        >
+            <TileLayer
+                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
+            />
+            {helper}
+            {markers}
+        </MapContainer>
+    )
+}
+
 const WeatherMap = () => {
     const { cities, activeFilter } = useSelector(state => state.cities);
 
@@ -26,23 +44,10 @@ const WeatherMap = () => {
 
     if (isSuccess) {
         const position = transformCoords(location);
-        const zoom = 3;
+        return <MapBase position={position} markers={markers}/>
 
-        return (
-            <MapContainer 
-                center={position} 
-                zoom={zoom} 
-            >
-                <TileLayer
-                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                    url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"   
-                />
-                {markers}
-            <MapHelper location={position}/>
-            </MapContainer>
-        )
     } else {
-        return null
+        return <MapBase markers={markers}/>
     }
 }
 

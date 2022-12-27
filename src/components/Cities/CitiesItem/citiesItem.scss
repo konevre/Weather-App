@@ -11,6 +11,7 @@
 
     &.sm {
         width: 33vw;
+        grid-template-columns: 11vw 17vw 5vw;
     }
 
     &.active {
@@ -76,6 +77,10 @@
             background-color: #35455E;
             width: 100%;
             height: 100%;
+        }
+
+        &.sm {
+            display: none;
         }
     }
 

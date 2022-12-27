@@ -46,7 +46,7 @@ const CitiesItem = ({item, size}) => {
     }
 
     if (isSuccess) {
-        const { name, temp, time, icon, coords } = transformCurrent(currentWeather);
+        const { name, temp, time, icon } = transformCurrent(currentWeather);
         const itemClass = classNames('cities__item', {
             'active': name === activeFilter,
             'sm': size === "sm",
@@ -71,7 +71,7 @@ const CitiesItem = ({item, size}) => {
                         <div className="cities__item-name">{name}</div>
                         <div className="cities__item-time">{time}</div>
                     </div>
-                    <div className="cities__item-temp">{temp}°</div>
+                    <div className={`cities__item-temp ${size}`}>{temp}°</div>
                     <img 
                         src={close} 
                         alt="close" 

@@ -1,19 +1,38 @@
-import { useGetCurrentWeatherQuery } from "../../../api/apiSlice";
-import { Marker } from 'react-leaflet'
+import { Link } from "react-router-dom";
+import { Marker, Popup } from 'react-leaflet'
+import { useDispatch } from "react-redux";
 
-import { transformCoords } from "../../../utils/utils";
+import { makeActive } from "../../Weather/weatherSlice";
+import { useGetCurrentWeatherQuery } from "../../../api/apiSlice";
+import { transformCurrent } from "../../../utils/utils";
+
+import "./markerCustom.scss"
 
 const MarkerCustom = ({item}) => {
-
+    const dispatch = useDispatch();
     const {
         data: location,
         isSuccess
     } = useGetCurrentWeatherQuery(item)
 
     if (isSuccess) {
-        const position = transformCoords(location);
+        const { coords, name, temp, icon } = transformCurrent(location);
         return (
-            <Marker position={position}/>
+            <Marker position={coords}>
+                <Popup>
+                    <div className="popup__name">{name}</div>
+                    <img src={require(`../../../resources/weather-icons/${icon}.svg`)} alt="weather_img" />
+                    <div className="popup__temp">{temp}°</div>
+                    <Link 
+                        to="/weather" 
+                        onClick={() => {
+                            dispatch(makeActive(name))
+                            console.log(name)
+                        }}>
+                        <div className="popup__button" >See detail</div>
+                    </Link> 
+                </Popup>
+            </Marker>
         )
     } else {
         return null

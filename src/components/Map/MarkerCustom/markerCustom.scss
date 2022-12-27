@@ -1,0 +1,59 @@
+@import "../../../style/variables.scss";
+
+.leaflet-popup-content {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+.leaflet-popup-content-wrapper {
+    background-color: $space-dark;
+    min-width: 10vw;
+    max-width: auto;
+    height: 22vh;
+    
+
+    img {
+        width: 4vw;
+    }
+}
+
+.leaflet-popup-tip {
+    display: none;
+}
+
+.popup__name {
+    color: $white;
+    font-size: 20px;
+    text-align: center;
+}
+
+.popup__temp {
+    color: $white;
+    font-size: 20px;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+.popup__button {
+    margin-top: 10px;
+    width: 5.5vw;
+    height: 3vh;
+    background: #0095FF;
+    border-radius: 53.5px;
+    border: none;
+    font-weight: 500;
+    font-size: 0.9vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $white;
+    cursor: pointer;
+}
+

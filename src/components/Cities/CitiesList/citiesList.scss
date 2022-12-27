@@ -9,6 +9,10 @@
     row-gap: 2.8vh;
     margin-top: 3vh;
     overflow-y:auto;
+
+    &.sm {
+        grid-template-columns: 33vw;
+    }
 }
 
 .empty {

@@ -1,13 +1,17 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 import preview_logo from "../../resources/logo.svg";
-import weather_icon from "../../resources/sidebar/weather.svg";
-import list_icon from "../../resources/sidebar/list.svg";
-import map_icon from "../../resources/sidebar/map.svg";
-import settings_icon from "../../resources/sidebar/settings.svg";
+import { ReactComponent as WeatherIcon } from "../../resources/sidebar/weather.svg";
+import { ReactComponent as ListIcon } from "../../resources/sidebar/list.svg";
+import { ReactComponent as MapIcon } from "../../resources/sidebar/map.svg";
+import { ReactComponent as SettingsIcon } from "../../resources/sidebar/settings.svg";
 import "./sidebar.scss";
 
 const Sidebar = () => {
+    const grey = "#9399A2",
+          white = "#DEE0E4";
+    const style = ({ isActive }) => ({'color': isActive? white : grey});
+    console.log(style)
 
     return (
         <aside className="aside">
@@ -17,16 +21,28 @@ const Sidebar = () => {
                 </div>
                 <ul className="aside__nav-list">
                     <li className="aside__nav-item">
-                        <Link to="/weather"><img src={weather_icon} alt="weather" className="aside__nav-icon" />Weather</Link> 
+                        <NavLink to="/weather" >
+                            <WeatherIcon/>
+                            Weather
+                        </NavLink> 
                     </li>
                     <li className="aside__nav-item">
-                        <Link to="/cities"><img src={list_icon} alt="cities" className="aside__nav-icon" />Cities</Link> 
+                        <NavLink to="/cities">
+                            <ListIcon/>
+                            Cities
+                        </NavLink> 
                     </li>
                     <li className="aside__nav-item">
-                        <Link to="/map"><img src={map_icon} alt="map" className="aside__nav-icon" />Map</Link> 
+                        <NavLink to="/map">
+                            <MapIcon/>
+                            Map
+                        </NavLink> 
                     </li>
                     <li className="aside__nav-item">
-                        <Link to="/settings"><img src={settings_icon} alt="settings" className="aside__nav-icon" />Settings</Link> 
+                        <NavLink to="/settings">
+                            <SettingsIcon/>
+                            Settings
+                        </NavLink> 
                     </li>
                     <li className="aside__nav-item"></li>
                 </ul>

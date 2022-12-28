@@ -11,6 +11,7 @@ const Search = ({page}) => {
     const submitHandler = (page, list, city) => {
         page === "cities" || page === "map" ? 
             list.includes(city) ? console.log("ALREADY EXIST") :  dispatch(addCity(city)) :
+        page === "settings" ? console.log("MAP") :
         dispatch(makeActive(city))
     }
 

@@ -1,5 +1,6 @@
 @import "../../style/variables.scss";
 
+
 .aside {
     background-color: $space-dark;
     border-radius: 30px;
@@ -43,8 +44,14 @@
                 text-decoration: none;
                 color: $grey;
 
-                img {
-                    height: 4vh;
+                &.active, &.active svg {
+                    color: $white;
+                    fill: $white;
+                }
+
+                svg {
+                    fill: $grey;
+                    width: auto;
                 }
             }
         }

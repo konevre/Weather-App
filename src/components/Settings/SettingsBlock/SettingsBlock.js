@@ -1,0 +1,98 @@
+import classNames from "classnames";
+// import { motion } from "framer-motion"
+
+import { useSelector, useDispatch } from "react-redux";
+import { setTemp, setWind, setPressure, setDistance } from "../SettingsSlice";
+
+import "./settingsBlock.scss";
+
+const SettingsBlock = () => {
+    const { 
+        activeTemp, 
+        activeWind, 
+        activePressure, 
+        activeDistance 
+    } = useSelector(state => state.settings);
+    const dispatch = useDispatch();
+
+    const settingsObj = [
+        { title: "Temperatue", values: ["Celcius", "Farenheit"], selector: activeTemp, setSelector: setTemp },
+        { title: "Wind speed", values: ["km/h", "m/s", "Knots"], selector: activeWind, setSelector: setWind },
+        { title: "Pressure", values: ["hPa", "Inches", "kPa", "mm"], selector: activePressure, setSelector: setPressure },
+        { title: "Distance", values: ["Kilometers", "Miles"], selector: activeDistance, setSelector: setDistance },
+    ]
+
+    const makeActive = (value, action) => {
+        dispatch(action(value))
+    }
+
+    // const spring = {
+    //     type: "spring",
+    //     stiffness: 700,
+    //     damping: 30,
+    //     duration: 0.3
+    //   };
+
+    const items = settingsObj.map(item => {
+        const { title, values, selector, setSelector} = item;
+
+        const content = values.map(value => {
+            const togglerClass = classNames("units__toggler-btn", {
+                "active": value === selector
+                }
+            )
+            return (
+                    <div 
+                        key={value}
+                        onClick={() => makeActive(value, setSelector)} 
+                        className={togglerClass}>
+                        {value}
+                    </div>
+            )
+        })
+
+        return (
+            <div className="units__item" key={title}>
+                <div className="units__title">{title}</div>
+                <div className="units__toggler">
+                    { content }
+                </div>
+            </div>
+        )
+    })
+
+    return (
+        <div className="units">
+            <h2 className="units__header">Units</h2>
+            <div className="units__block">
+                { items }
+                {/* 
+                <div className="units__item">
+                    <div className="units__title">Pressure</div>
+                    <div className="units__toggler">
+                        <div className="units__toggler-btn">Inches</div>
+                        <div className="units__toggler-btn">hPa</div>
+                        <div className="units__toggler-btn">kPa</div>
+                        <div className="units__toggler-btn active">mm</div>
+                    </div>
+                </div>
+                <div className="units__item">
+                    <div className="units__title">Precipitation</div>
+                    <div className="units__toggler">
+                        <div className="units__toggler-btn active">Millimeters</div>
+                        <div className="units__toggler-btn">Inches</div>
+                    </div>
+                </div>
+                <div className="units__item">
+                    <div className="units__title">Distance</div>
+                    <div className="units__toggler">
+                        <div className="units__toggler-btn active">Kilometers</div>
+                        <div className="units__toggler-btn">Miles</div>
+                    </div>
+                </div> */}
+            </div>
+        </div>
+    )
+}
+
+export default SettingsBlock;

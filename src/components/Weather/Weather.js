@@ -12,13 +12,13 @@ const Weather = () => {
             page="weather"
             middle={
                 <div className="weather__wrapper">
-                     <WeatherCurrent size="lg" page="weather"/>
-                     <WeatherToday number={6} size="lg"/>
+                     <WeatherCurrent size="lg" page="weather" />
+                     <WeatherToday size="lg" number={6} />
                      <WeatherConditions/>
                  </div>
             }
             right={
-                <WeatherForecast number={5} size="lg"/>
+                <WeatherForecast size="lg" number={5} />
             }
         />
     )

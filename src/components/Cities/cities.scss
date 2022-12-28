@@ -1,12 +1,5 @@
 @import "../../style/variables.scss";
 
-.cities-grid {
-    display: grid;
-    grid-template-columns: 9vw 51vw 33vw;
-    grid-template-rows: 100vh;
-    column-gap: 5vh;
-}
-
 .cities__weather {
     margin-top: 10vh;
     width: 33vw;

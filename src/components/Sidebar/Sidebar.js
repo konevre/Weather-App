@@ -10,30 +10,28 @@ import "./sidebar.scss";
 const Sidebar = () => {
 
     return (
-        <div className="weather-grid">
-            <aside className="aside">
-                <nav className="aside__nav">
-                    <div className="aside__nav-logo">
-                        <Link to="/"><img src={preview_logo} alt="logo" /></Link>
-                    </div>
-                    <ul className="aside__nav-list">
-                        <li className="aside__nav-item">
-                            <Link to="/weather"><img src={weather_icon} alt="weather" className="aside__nav-icon" />Weather</Link> 
-                        </li>
-                        <li className="aside__nav-item">
-                            <Link to="/cities"><img src={list_icon} alt="cities" className="aside__nav-icon" />Cities</Link> 
-                        </li>
-                        <li className="aside__nav-item">
-                            <Link to="/map"><img src={map_icon} alt="map" className="aside__nav-icon" />Map</Link> 
-                        </li>
-                        <li className="aside__nav-item">
-                            <Link to="/settings"><img src={settings_icon} alt="settings" className="aside__nav-icon" />Settings</Link> 
-                        </li>
-                        <li className="aside__nav-item"></li>
-                    </ul>
-                </nav>
-            </aside>
-        </div>
+        <aside className="aside">
+            <nav className="aside__nav">
+                <div className="aside__nav-logo">
+                    <Link to="/"><img src={preview_logo} alt="logo" /></Link>
+                </div>
+                <ul className="aside__nav-list">
+                    <li className="aside__nav-item">
+                        <Link to="/weather"><img src={weather_icon} alt="weather" className="aside__nav-icon" />Weather</Link> 
+                    </li>
+                    <li className="aside__nav-item">
+                        <Link to="/cities"><img src={list_icon} alt="cities" className="aside__nav-icon" />Cities</Link> 
+                    </li>
+                    <li className="aside__nav-item">
+                        <Link to="/map"><img src={map_icon} alt="map" className="aside__nav-icon" />Map</Link> 
+                    </li>
+                    <li className="aside__nav-item">
+                        <Link to="/settings"><img src={settings_icon} alt="settings" className="aside__nav-icon" />Settings</Link> 
+                    </li>
+                    <li className="aside__nav-item"></li>
+                </ul>
+            </nav>
+        </aside>
     )
 }
 

@@ -5,17 +5,12 @@ import { useDispatch, useSelector } from "react-redux";
 import "./search.scss"
 
 const Search = ({page}) => {
-
     const { cities } = useSelector(state => state.cities);
     const dispatch = useDispatch();
 
-    const checkCities = (list, city) => {
-        return list.includes(city)
-    }
-
     const submitHandler = (page, list, city) => {
-        page === "cities" ? 
-            checkCities(list, city) ? console.log("ALREADY EXIST") :  dispatch(addCity(city)) :
+        page === "cities" || page === "map" ? 
+            list.includes(city) ? console.log("ALREADY EXIST") :  dispatch(addCity(city)) :
         dispatch(makeActive(city))
 
     }

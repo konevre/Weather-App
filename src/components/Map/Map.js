@@ -1,20 +1,22 @@
-import Sidebar from "../Sidebar/Sidebar";
-import Search from "../Search/Search";
+import BaseComponent from "../BaseComponent/BaseComponent";
 import WeatherMap from "./WeatherMap/WeatherMap";
 import CitiesList from "../Cities/CitiesList/CitiesList";
 
+import "./map.scss";
+
 const Map = () => {
     return (
-        <div className="cities-grid">
-            <Sidebar />
-            <div>
-                <Search page="cities"/>
+        <BaseComponent
+            page="map"
+            middle={
                 <WeatherMap/>
-            </div>
-            <div className="cities__weather">
-                <CitiesList size="sm"/>
-            </div>
-        </div>
+            }
+            right={
+                <div className="map__weather">
+                    <CitiesList size="sm" />
+                </div>
+            }
+        />
     )
 }
 

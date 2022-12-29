@@ -11,6 +11,7 @@ const WeatherToday = ({number, size, page}) => {
 
     const { activeCity } = useSelector(state => state.weather);
     const { activeFilter } = useSelector(state => state.cities);
+    const settings = useSelector(state => state.settings);
     
     const cityQuery = page === "cities" ? activeFilter : activeCity;
 
@@ -29,7 +30,7 @@ const WeatherToday = ({number, size, page}) => {
     }
 
     if (isSuccess) {
-        const today = transformToday(todayWeather.list, todayWeather.city.timezone, number);
+        const today = transformToday(todayWeather.list, todayWeather.city.timezone, number, settings);
 
         const items = today.map((item, i) => {
             const { time, descr, temp, icon } = item;

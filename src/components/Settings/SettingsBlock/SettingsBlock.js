@@ -16,7 +16,7 @@ const SettingsBlock = () => {
     const dispatch = useDispatch();
 
     const settingsObj = [
-        { title: "Temperatue", values: ["Celcius", "Farenheit"], selector: activeTemp, setSelector: setTemp },
+        { title: "Temperatue", values: ["Celcius", "Fahrenheit", "Kelvin"], selector: activeTemp, setSelector: setTemp },
         { title: "Wind speed", values: ["km/h", "m/s", "Knots"], selector: activeWind, setSelector: setWind },
         { title: "Pressure", values: ["hPa", "Inches", "kPa", "mm"], selector: activePressure, setSelector: setPressure },
         { title: "Distance", values: ["Kilometers", "Miles"], selector: activeDistance, setSelector: setDistance },
@@ -66,30 +66,6 @@ const SettingsBlock = () => {
             <h2 className="units__header">Units</h2>
             <div className="units__block">
                 { items }
-                {/* 
-                <div className="units__item">
-                    <div className="units__title">Pressure</div>
-                    <div className="units__toggler">
-                        <div className="units__toggler-btn">Inches</div>
-                        <div className="units__toggler-btn">hPa</div>
-                        <div className="units__toggler-btn">kPa</div>
-                        <div className="units__toggler-btn active">mm</div>
-                    </div>
-                </div>
-                <div className="units__item">
-                    <div className="units__title">Precipitation</div>
-                    <div className="units__toggler">
-                        <div className="units__toggler-btn active">Millimeters</div>
-                        <div className="units__toggler-btn">Inches</div>
-                    </div>
-                </div>
-                <div className="units__item">
-                    <div className="units__title">Distance</div>
-                    <div className="units__toggler">
-                        <div className="units__toggler-btn active">Kilometers</div>
-                        <div className="units__toggler-btn">Miles</div>
-                    </div>
-                </div> */}
             </div>
         </div>
     )

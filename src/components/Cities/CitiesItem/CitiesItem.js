@@ -16,6 +16,7 @@ import "./citiesItem.scss";
 const CitiesItem = ({item, size}) => {
     const dispatch = useDispatch();
     const { activeFilter } = useSelector(state => state.cities);
+    const settings = useSelector(state => state.settings);
     const [ isDragging, setDragging ] = useState(false);
 
     const {
@@ -46,7 +47,7 @@ const CitiesItem = ({item, size}) => {
     }
 
     if (isSuccess) {
-        const { name, temp, time, icon } = transformCurrent(currentWeather);
+        const { name, temp, time, icon } = transformCurrent(currentWeather, settings);
         const itemClass = classNames('cities__item', {
             'active': name === activeFilter,
             'sm': size === "sm",

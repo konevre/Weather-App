@@ -11,6 +11,7 @@ const WeatherForecast = ({size, number, page}) => {
 
     const { activeCity } = useSelector(state => state.weather);
     const { activeFilter } = useSelector(state => state.cities);
+    const settings = useSelector(state => state.settings);
     
     const cityQuery = page === "cities" ? activeFilter : activeCity;
 
@@ -29,7 +30,7 @@ const WeatherForecast = ({size, number, page}) => {
     }
 
     if (isSuccess) {
-        const forecast = transformForecast(forecastWeather, number);
+        const forecast = transformForecast(forecastWeather, settings, number);
 
         const items = forecast.map((item, i) => {
             const { temp, icon, descr, date } = item;

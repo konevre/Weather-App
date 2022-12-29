@@ -8,11 +8,6 @@ import { ReactComponent as SettingsIcon } from "../../resources/sidebar/settings
 import "./sidebar.scss";
 
 const Sidebar = () => {
-    const grey = "#9399A2",
-          white = "#DEE0E4";
-    const style = ({ isActive }) => ({'color': isActive? white : grey});
-    console.log(style)
-
     return (
         <aside className="aside">
             <nav className="aside__nav">

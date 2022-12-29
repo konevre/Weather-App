@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Marker, Popup } from 'react-leaflet'
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import { makeActive } from "../../Weather/weatherSlice";
 import { useGetCurrentWeatherQuery } from "../../../api/apiSlice";
@@ -9,14 +9,16 @@ import { transformCurrent } from "../../../utils/utils";
 import "./markerCustom.scss"
 
 const MarkerCustom = ({item}) => {
+    const settings = useSelector(state => state.settings);
     const dispatch = useDispatch();
+    
     const {
         data: location,
         isSuccess
     } = useGetCurrentWeatherQuery(item)
 
     if (isSuccess) {
-        const { coords, name, temp, icon } = transformCurrent(location);
+        const { coords, name, temp, icon } = transformCurrent(location, settings);
         return (
             <Marker position={coords}>
                 <Popup>

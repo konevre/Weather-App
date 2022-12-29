@@ -15,6 +15,7 @@ import "./weatherConditions.scss";
 const WeatherConditions = () => {
 
     const { activeCity } = useSelector(state => state.weather);
+    const settings = useSelector(state => state.settings);
 
     const {
         data: currentWeather,
@@ -31,7 +32,7 @@ const WeatherConditions = () => {
     }
 
     if (isSuccess) {
-        const { feel, wind, humidity, visibility } = transformCurrent(currentWeather);
+        const { feel, wind, humidity, visibility } = transformCurrent(currentWeather, settings);
         return (
             <div className="weather__conditions">
                 <div className="weather__conditions-title">AIR CONDITIONS</div>
@@ -39,12 +40,12 @@ const WeatherConditions = () => {
                     <div className="weather__conditions-item">
                         <img src={feelIcon} alt="real_feel" className="weather__conditions-icon" />
                         <div className="weather__conditions-subtitle">Real Feel</div>
-                        <div className="weather__conditions-value">{feel}°</div>
+                        <div className="weather__conditions-value">{feel}</div>
                     </div>
                     <div className="weather__conditions-item">
                         <img src={windIcon} alt="real_feel" className="weather__conditions-icon" />
                         <div className="weather__conditions-subtitle">Wind</div>
-                        <div className="weather__conditions-value">{wind} m/s</div>
+                        <div className="weather__conditions-value">{wind}</div>
                     </div>
                     <div className="weather__conditions-item">
                         <img src={dropIcon} alt="real_feel" className="weather__conditions-icon" />
@@ -54,7 +55,7 @@ const WeatherConditions = () => {
                     <div className="weather__conditions-item">
                         <img src={indexIcon} alt="real_feel" className="weather__conditions-icon" />
                         <div className="weather__conditions-subtitle">Visibility</div>
-                        <div className="weather__conditions-value">{visibility} km</div>
+                        <div className="weather__conditions-value">{visibility}</div>
                     </div>
                 </div>
             </div>

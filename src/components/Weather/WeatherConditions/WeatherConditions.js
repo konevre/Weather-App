@@ -9,6 +9,10 @@ import feelIcon from "../../../resources/conditions/feel.svg";
 import dropIcon from "../../../resources/conditions/drop.svg";
 import windIcon from "../../../resources/conditions/wind.svg";
 import indexIcon from "../../../resources/conditions/index.svg";
+import pressureIcon from "../../../resources/conditions/pressure.svg";
+import sunriseIcon from "../../../resources/conditions/sunrise.svg";
+import sunsetIcon from "../../../resources/conditions/sunset.svg";
+import cloudsIcon from "../../../resources/conditions/clouds.svg";
 
 import "./weatherConditions.scss";
 
@@ -32,31 +36,44 @@ const WeatherConditions = () => {
     }
 
     if (isSuccess) {
-        const { feel, wind, humidity, visibility } = transformCurrent(currentWeather, settings);
+        const { 
+            feel, 
+            wind, 
+            humidity, 
+            visibility, 
+            pressure,
+            sunrise,
+            sunset,
+            cloudiness
+        } = transformCurrent(currentWeather, settings);
+
+        const conditionsObj = [
+            { subtitle: "Real Feel", value: feel, img: feelIcon},
+            { subtitle: "Wind", value: wind, img: windIcon},
+            { subtitle: "Humidity", value: humidity, img: dropIcon},
+            { subtitle: "Sunrise", value: sunrise, img: sunriseIcon},
+            { subtitle: "Visibility", value: visibility, img: indexIcon},
+            { subtitle: "Pressure", value: pressure, img: pressureIcon},
+            { subtitle: "Cloudiness", value: cloudiness, img: cloudsIcon},
+            { subtitle: "Sunset", value: sunset, img: sunsetIcon},
+        ]
+
+        const items = conditionsObj.map(item => {
+            const { subtitle, value, img } = item;
+            return (
+                <div key={subtitle} className="weather__conditions-item">
+                    <img src={img} alt="real_feel" className="weather__conditions-icon" />
+                    <div className="weather__conditions-subtitle">{subtitle}</div>
+                    <div className="weather__conditions-value">{value}</div>
+                </div>
+            )
+        })
+
         return (
             <div className="weather__conditions">
-                <div className="weather__conditions-title">AIR CONDITIONS</div>
+                <div className="weather__conditions-title">GENERAL</div>
                 <div className="weather__conditions-wrapper">
-                    <div className="weather__conditions-item">
-                        <img src={feelIcon} alt="real_feel" className="weather__conditions-icon" />
-                        <div className="weather__conditions-subtitle">Real Feel</div>
-                        <div className="weather__conditions-value">{feel}</div>
-                    </div>
-                    <div className="weather__conditions-item">
-                        <img src={windIcon} alt="real_feel" className="weather__conditions-icon" />
-                        <div className="weather__conditions-subtitle">Wind</div>
-                        <div className="weather__conditions-value">{wind}</div>
-                    </div>
-                    <div className="weather__conditions-item">
-                        <img src={dropIcon} alt="real_feel" className="weather__conditions-icon" />
-                        <div className="weather__conditions-subtitle">Humidity</div>
-                        <div className="weather__conditions-value">{humidity}%</div>
-                    </div>
-                    <div className="weather__conditions-item">
-                        <img src={indexIcon} alt="real_feel" className="weather__conditions-icon" />
-                        <div className="weather__conditions-subtitle">Visibility</div>
-                        <div className="weather__conditions-value">{visibility}</div>
-                    </div>
+                    {items}
                 </div>
             </div>
         )

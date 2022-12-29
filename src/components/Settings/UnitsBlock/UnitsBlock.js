@@ -4,9 +4,9 @@ import classNames from "classnames";
 import { useSelector, useDispatch } from "react-redux";
 import { setTemp, setWind, setPressure, setDistance } from "../SettingsSlice";
 
-import "./settingsBlock.scss";
+import "./unitsBlock.scss";
 
-const SettingsBlock = () => {
+const UnitsBlock = () => {
     const { 
         activeTemp, 
         activeWind, 
@@ -71,4 +71,4 @@ const SettingsBlock = () => {
     )
 }
 
-export default SettingsBlock;
+export default UnitsBlock;

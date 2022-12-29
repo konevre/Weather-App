@@ -16,32 +16,33 @@
         display: grid;
         margin-top: 2vh;
         margin-left: 5vh;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
         grid-template-rows: auto auto;
         row-gap: 1.5vh;
     }
 
     &-item {
         display: grid;
-        grid-template-columns: 2.5vw auto;
+        grid-template-columns: 4vw auto;
         grid-template-rows: 3vh auto;
 
         img {
             height: 100%;
+            justify-self: center;
         }
     }
 
     &-subtitle {
         color: $grey;
         font-weight: 700;
-        font-size: 2.2vh;
+        font-size: 2vh;
         align-self: center;
     }
 
     &-value {
         font-weight: 700;
         margin-top: 0.5vh;
-        font-size: 3vh;
+        font-size: 2.5vh;
         color: $white;
         grid-column: 2;
         grid-row: 2;

@@ -38,7 +38,7 @@ const WeatherToday = ({number, size, page}) => {
                 <div key={i} className="weather__today-item">
                     <div className="weather__today-time">{time}</div>
                     <img className={`weather__today-img ${size}`} src={require(`../../../resources/weather-icons/${icon}.svg`)} alt={descr} />
-                    <div className="weather__today-temp">{temp}°</div>
+                    <div className="weather__today-temp">{temp}</div>
                 </div>
             )
         })

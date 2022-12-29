@@ -1,8 +1,8 @@
-const calcTime = (dt, offset) => {
+const calcTime = (dt, offset, hour12) => {
     const d = new Date(dt * 1000);
     const utc = d.getTime() + (d.getTimezoneOffset() * 60000);
     const nd = new Date(utc + (3600000 * offset / 60 / 60));
-    return nd.toLocaleTimeString().slice(0, -3)
+    return nd.toLocaleTimeString([], { hour12, hour: "2-digit", minute: "2-digit" })
 };
 
 const convertTemp = (data, activeTemp) => {
@@ -50,29 +50,38 @@ const convertDistance = (data, activeDistance) => {
 } 
 
 export const transformCurrent = (data, settings) => {
-    const { activeTemp, activeWind, activePressure, activeDistance } = settings;
+    const { 
+        activeTemp, 
+        activeWind, 
+        activePressure, 
+        activeDistance,
+        hour12
+    } = settings;
 
     return {
         name: data.name,
         temp: convertTemp(data.main.temp, activeTemp),
         feel: convertTemp(data.main.feels_like, activeTemp),
-        humidity: data.main.humidity,
+        humidity: data.main.humidity + "%",
         pressure: convertPressure(data.main.pressure, activePressure),
         wind: convertWind(data.wind.speed, activeWind),
+        cloudiness: data.clouds.all + "%",
         icon: data.weather[0].icon,
         visibility: convertDistance(data.visibility / 1000, activeDistance),
         coords: [data.coord.lat, data.coord.lon],
-        time: calcTime(data.dt, data.timezone),
+        time: calcTime(data.dt, data.timezone, hour12),
+        sunrise: calcTime(data.sys.sunrise, data.timezone, hour12),
+        sunset: calcTime(data.sys.sunset, data.timezone, hour12),
     }
 };
 
 export const transformToday = (list, timezone, number, settings) => {
-    const { activeTemp } = settings;
+    const { activeTemp, hour12 } = settings;
     return list.slice(0, number).map(item => {
         return {
             temp: convertTemp(item.main.temp, activeTemp),
             descr: item.weather[0].main,
-            time: calcTime(item.dt, timezone),
+            time: calcTime(item.dt, timezone, hour12),
             icon: item.weather[0].icon
         }
     })

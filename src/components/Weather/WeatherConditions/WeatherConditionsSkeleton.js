@@ -5,7 +5,7 @@ const WeatherConditionsSkeleton = () => {
     const sxValue = { fontSize: "3vh", bgcolor: '#35455E', width: "80%" };
 
     const content = []
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 8; i++) {
         content.push(
             <div key={i} className="weather__conditions-item">
                 <Skeleton sx={sxImgNSub} />

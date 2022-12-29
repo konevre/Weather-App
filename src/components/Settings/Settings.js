@@ -1,12 +1,16 @@
 import BaseComponent from "../BaseComponent/BaseComponent";
-import SettingsBlock from "./SettingsBlock/SettingsBlock";
+import UnitsBlock from "./UnitsBlock/UnitsBlock";
+import GeneralBlock from "./GeneralBlock/GeneralBlock";
 
 const Settings = () => {
     return (
         <BaseComponent
             page="settings"
             middle={
-                <SettingsBlock/>
+                <>
+                    <UnitsBlock/>
+                    <GeneralBlock/>
+                </>
             }
         />
     )

@@ -10,7 +10,6 @@ const CitiesList = ({size}) => {
 
     const { cities } = useSelector(state => state.cities)
     const dispatch = useDispatch();
-    console.log(cities)
 
     if (cities.length === 0) {
         return  (

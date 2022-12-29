@@ -52,6 +52,8 @@
         }
 
         height: 10.3vh;
+        padding: 0 30px;
+        width: 100%;
         margin-top: 3.5vh;
         position: relative;
         display: flex;
@@ -62,7 +64,7 @@
             content: "";
             position: absolute;
             bottom: -2.2vh;
-            width: 85%;
+            width: 25.5vw;
             height: 0.35vh;
             background: $space-light;
         }
@@ -93,7 +95,7 @@
         font-weight: 400;
         font-size: 2.2vh;
         color: $grey;
-        text-align: center;
+        text-align: start;
 
         &.skeleton {
             background-color: #35455E;
@@ -120,8 +122,8 @@
         font-weight: 400;
         font-size: 2.2vh;
         color: $grey;
-        width: 2vw;
-        text-align: center;
+        width: 4vw;
+        text-align: end;
 
         &.skeleton {
             background-color: $space-light; 

@@ -1,6 +1,7 @@
 import BaseComponent from "../BaseComponent/BaseComponent";
 import UnitsBlock from "./UnitsBlock/UnitsBlock";
 import GeneralBlock from "./GeneralBlock/GeneralBlock";
+import AdBlock from "./AdBlock/AdBlock";
 
 const Settings = () => {
     return (
@@ -11,6 +12,9 @@ const Settings = () => {
                     <UnitsBlock/>
                     <GeneralBlock/>
                 </>
+            }
+            right={
+                <AdBlock/>
             }
         />
     )

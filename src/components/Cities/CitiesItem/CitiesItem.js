@@ -10,7 +10,7 @@ import CitiesItemSkeleton from "./CitiesItemSkeleton";
 
 import { transformCurrent } from "../../../utils/utils";
 
-import close from "../../../resources/close.svg";
+import { ReactComponent as Close } from "../../../resources/close.svg";
 import "./citiesItem.scss";
 
 const CitiesItem = ({item, size}) => {
@@ -72,12 +72,8 @@ const CitiesItem = ({item, size}) => {
                         <div className="cities__item-name">{name}</div>
                         <div className="cities__item-time">{time}</div>
                     </div>
-                    <div className={`cities__item-temp ${size}`}>{temp}°</div>
-                    <img 
-                        src={close} 
-                        alt="close" 
-                        className="cities__item-delete" 
-                        onClick={(e) => onDelete(e, name)}/>
+                    <div className={`cities__item-temp ${size}`}>{temp}</div>
+                    <Close className="cities__item-delete" onClick={(e) => onDelete(e, name)}/>
             </Reorder.Item>
         )
     } 

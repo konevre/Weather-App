@@ -1,0 +1,159 @@
+@media (max-width: 2560px) and (max-height: 1800px) { 
+    .weather__conditions {
+        &-value {
+            font-size: 1.7vh;
+        }
+        &-subtitle {
+            font-size: 1.6vh;
+        }
+        &-item img {
+            width: 2vw;
+        }
+    }
+}
+
+@media (max-width: 1440px) and (max-height: 1200px) { 
+    .weather__conditions {
+        &-value {
+            font-size: 1.7vh;
+        }
+        &-subtitle {
+            font-size: 1.6vh;
+        }
+        &-item img {
+            width: 2vw;
+        }
+    }
+}
+
+@media (max-width: 1440px) and (max-height: 900px) { 
+    .weather__conditions {
+        &-value {
+            font-size: 2vh;
+        }
+        &-subtitle {
+            font-size: 2vh;
+        }
+    }
+}
+
+@media (max-width: 1440px) and (max-height: 700px) { 
+    .weather__conditions {
+        &-value {
+            font-size: 2.2vh;
+        }
+        &-subtitle {
+            font-size: 2.2vh;
+        }
+    }
+}
+
+@media (max-width: 1200px) and (max-height: 900px) { 
+    .weather__conditions {
+        &-value {
+            font-size: 1.8vh;
+        }
+        &-subtitle {
+            font-size: 1.8vh;
+        }
+    }
+}
+
+@media (max-width: 1024px) and (max-height: 900px) { 
+    .weather__conditions {
+        &-value {
+            font-size: 1.7vh;
+        }
+    }
+}
+@media (max-width: 900px) and (max-height: 1200px) { 
+    .weather__conditions {
+        &-value {
+            font-size: 1.5vh;
+        }
+        &-subtitle {
+            font-size: 1.6vh;
+        }
+    }
+}
+@media (max-width: 900px) and (max-height: 900px) { 
+    .weather__conditions {
+        &-value {
+            font-size: 1.8vh;
+        }
+        &-subtitle {
+            font-size: 1.7vh;
+        }
+    }
+}
+@media (max-width: 900px) and (max-height: 1200px) { 
+    .weather__conditions {
+        &-title {
+            font-size: 2vh;
+        }
+        &-value {
+            font-size: 2.2vh;
+        }
+        &-subtitle {
+            font-size: 2vh;
+        }
+        &-icon {
+            width: 2vw;
+        }
+
+        &-item img {
+            width: 3vw;
+        }
+    }
+}
+
+@media (max-width: 900px) and (max-height: 700px) { 
+    .weather__conditions {
+        &-title {
+            font-size: 2vh;
+        }
+        &-value {
+            font-size: 2.2vh;
+        }
+        &-subtitle {
+            font-size: 2vh;
+        }
+        &-icon {
+            width: 2vw;
+        }
+    }
+}
+
+@media (max-width: 600px) and (max-height: 900px) { 
+    .weather__conditions {
+        &-title {
+            font-size: 1.7vh;
+        }
+        &-value {
+            font-size: 1.25vh;
+        }
+        &-subtitle {
+            font-size: 1.2vh;
+        }
+        &-icon {
+            width: 2vw;
+        }
+    }
+}
+
+@media (max-width: 320px) and (max-height: 700px) { 
+    .weather__conditions {
+        &-title {
+            font-size: 1.4vh;
+        }
+        &-value {
+            font-size: 1.5vh;
+        }
+        &-subtitle {
+            font-size: 1.3vh;
+        }
+        &-icon {
+            width: 1vw;
+        }
+    }
+}

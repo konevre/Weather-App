@@ -1,18 +1,18 @@
 @import "../../../style/variables.scss";
 
 .cities__wrapper {
-    height: 80.6vh;
+    height: 82.5vh;
     display: grid;
-    grid-template-columns: 51vw;
+    grid-template-columns: 100%;
     grid-template-rows: 15vh;
     grid-auto-rows: 15vh;
     row-gap: 2.8vh;
     margin-top: 3vh;
     overflow-y:auto;
 
-    &.sm {
-        grid-template-columns: 33vw;
-    }
+    // &.sm {
+    //     grid-template-columns: 33vw;
+    // }
 }
 
 .empty {

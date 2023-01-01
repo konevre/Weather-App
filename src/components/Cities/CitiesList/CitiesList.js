@@ -27,7 +27,7 @@ const CitiesList = ({size}) => {
         <Reorder.Group 
             axis="y"
             layoutScroll
-            className={`cities__wrapper ${size}`}
+            className={`cities__wrapper`}
             as="div" 
             values={cities}
             onReorder={(state) => dispatch(updateCities(state))}

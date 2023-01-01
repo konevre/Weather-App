@@ -1,6 +1,8 @@
 .base-grid {
     display: grid;
-    grid-template-columns: 9vw 51vw 31vw;
-    grid-template-rows: 100vh;
-    column-gap: 5vh;
+    grid-template-columns: 6vw 51vw 31vw;
+    grid-template-rows: 90vh;
+    column-gap: 3vw;
 }
+
+@import "./media.scss";

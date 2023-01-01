@@ -1,17 +1,18 @@
 @import "../../../style/variables.scss";
 
 .cities__item {
-    width: 51vw;
+    width: 100%;
     height: 15vh;
     background: $space-dark;
     border-radius: 30px;
     display: grid;
-    grid-template-columns: 13vw 26vw 7vw 5vw;
+    grid-template-columns: 3fr 5fr 4fr;
     cursor: grab;
+    position: relative;
 
     &.sm {
-        width: 33vw;
-        grid-template-columns: 11vw 17vw 5vw;
+        width: 100%;
+        grid-template-columns: 1fr 6fr;
     }
 
     &.active {
@@ -21,7 +22,7 @@
 
     &-name {
         font-weight: 500;
-        font-size: 40px;
+        font-size: 5vh;
         color: $white;
 
         &.skeleton {
@@ -36,6 +37,7 @@
     &-img {
         height: inherit;
         margin-left: 1vh;
+        pointer-events: none;
 
         &.skeleton {
             margin-top: 1vh;
@@ -54,7 +56,7 @@
 
     &-time {
         font-weight: 400;
-        font-size: 16px;
+        font-size: 2vh;
         color: $grey;
 
         &.skeleton {
@@ -69,7 +71,7 @@
         align-items: center;
         justify-content: center;
         font-weight: 700;
-        font-size: 50px;
+        font-size: 7vh;
         color: $white;
 
         &.skeleton {
@@ -84,13 +86,19 @@
         }
     }
 
-    img.cities__item-delete {
-        margin-top: 15px;
-        margin-left: 25px;
-        height: 24px;
-        width: 24px;
+    &-delete {
+        position: absolute;
+        right: 1vh;
+        top: 2vh;
+        height: 2.5vh;
+        width: 3vw;
         cursor: pointer;
+        fill: $white;
 
-        
+        &:hover {
+            fill: $grey;
+        }
     }
 }
+
+@import "./media.scss";

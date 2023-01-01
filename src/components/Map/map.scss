@@ -1,6 +1,8 @@
 .map__weather {
     margin-top: 10vh;
-    width: 33vw;
+    width: 100%;
     display: flex;
     flex-direction: column;
 }
+
+@import "./media.scss";

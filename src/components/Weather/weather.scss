@@ -1,6 +1,7 @@
 .weather__wrapper {
     display: grid;
-    grid-template-columns: 51vw;
-    grid-template-rows: 26.5vh 26.5vh 25vh;
-    row-gap: 2.8vh;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(auto);
+    row-gap: 5vh;
 }
+@import "./media.scss";

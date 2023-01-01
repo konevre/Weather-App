@@ -3,19 +3,17 @@
 .weather__conditions {
     background: $space-dark;
     border-radius: 30px;
+    padding: 3vh;
 
     &-title {
         font-weight: 700;
         font-size: 1.9vh;
         color: $grey;
-        margin-top: 3vh;
-        margin-left: 3vh;
     }
 
     &-wrapper {
         display: grid;
         margin-top: 2vh;
-        margin-left: 5vh;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         grid-template-rows: auto auto;
         row-gap: 1.5vh;
@@ -49,3 +47,5 @@
     }
 
 }
+
+@import "./media.scss";

@@ -1,16 +1,20 @@
 @import "../../../style/variables.scss";
 
 .weather__forecast {
-    // width: 31vw;
+    padding: 3vh;
+    width: 100%;
+    height: fit-content;
+    
 
     &.lg {
-        margin-top: 14vh;
+        margin-top: 13vh;
         background: $space-dark;
-        height: 80vh;
     }
 
     &.sm {
-        margin-top: 1vh;
+        margin: 0;
+        padding-left: 0;
+        padding-right: 0;
     }
 
     border-radius: 30px;
@@ -19,18 +23,12 @@
         font-weight: 700;
         font-size: 1.9vh;
         color: $grey;
-       
-        
 
         &.sm {
-            margin-top: 3vh;
-            margin-left: 0;
+            padding-left: 0;
+            padding-right: 0;
         }
 
-        &.lg {
-            margin-top: 3vh;
-            margin-left: 3vh;
-        }
     }
 
     &-wrapper {
@@ -52,7 +50,6 @@
         }
 
         height: 10.3vh;
-        padding: 0 30px;
         width: 100%;
         margin-top: 3.5vh;
         position: relative;
@@ -139,3 +136,4 @@
     }
 }
 
+@import "./media.scss";

@@ -18,25 +18,33 @@ const Sidebar = () => {
                     <li className="aside__nav-item">
                         <NavLink to="/weather" >
                             <WeatherIcon/>
-                            Weather
+                            <div className="aside__nav-title">
+                                Weather
+                            </div>
                         </NavLink> 
                     </li>
                     <li className="aside__nav-item">
                         <NavLink to="/cities">
                             <ListIcon/>
-                            Cities
+                            <div className="aside__nav-title">
+                                Cities
+                            </div>
                         </NavLink> 
                     </li>
                     <li className="aside__nav-item">
                         <NavLink to="/map">
                             <MapIcon/>
-                            Map
+                            <div className="aside__nav-title">
+                                Map
+                            </div>
                         </NavLink> 
                     </li>
                     <li className="aside__nav-item">
                         <NavLink to="/settings">
                             <SettingsIcon/>
-                            Settings
+                            <div className="aside__nav-title">
+                                Settings
+                            </div>
                         </NavLink> 
                     </li>
                     <li className="aside__nav-item"></li>

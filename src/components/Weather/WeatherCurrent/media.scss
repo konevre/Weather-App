@@ -1,0 +1,15 @@
+@media (max-width: 768px) { 
+    .weather__current {
+        &-img img {
+            height: 25vh;
+            width: 20vw;
+        }
+        &-city {
+            font-size: 4vh;
+        }
+
+        &-temp {
+            font-size: 6vh;
+        }
+    }
+}

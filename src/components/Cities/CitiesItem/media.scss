@@ -1,0 +1,49 @@
+@media (max-width: 1024px) and (max-height: 700px) { 
+    .cities__item {
+        &-temp {
+            font-size: 6vh;
+        }
+
+        &.sm {
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width: 425px) and (max-height: 900px) { 
+    .cities__item {
+        &-name {
+            font-size: 2vh;
+        }
+        &-temp {
+            font-size: 3vh;
+        }
+        &-img {
+            width: 17vw;
+        }
+    }
+}
+@media (max-width: 425px) and (max-height: 700px) { 
+    .cities__item {
+        &-name {
+            font-size: 3vh;
+        }
+        &-temp {
+            font-size: 4vh;
+        }
+        &-img {
+            width: 20vw;
+        }
+    }
+}
+@media (max-width: 320px) and (max-height: 700px) { 
+    .cities__item {
+        &-name {
+            font-size: 3vh;
+        }
+        &-temp {
+            font-size: 4vh;
+        }
+        
+    }
+}

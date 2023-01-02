@@ -1,5 +1,5 @@
-import { makeActive } from "../Weather/weatherSlice";
-import { addCity } from "../Cities/CitiesSlice";
+import { makeActive } from "../Pages/Weather/weatherSlice";
+import { addCity } from "../Pages/Cities/CitiesSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 import "./style/search.scss"

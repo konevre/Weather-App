@@ -105,6 +105,14 @@ export const transformForecast = (data, settings, number = 5) => {
     })
 }
 
+export const getLocalStorage = (name, def) => {
+    return localStorage.getItem(name) ? JSON.parse(localStorage.getItem(name)) : def;
+} 
+
+export const setLocalStorage = (name, payload) => {
+    localStorage.setItem(name, JSON.stringify(payload))
+} 
+
 export const transformCoords = (data) => {
     return [data.coord.lat, data.coord.lon]
 };

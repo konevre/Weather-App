@@ -1,12 +1,12 @@
 import { AnimatePresence } from "framer-motion";
 import { Route, Routes, useLocation } from 'react-router-dom';
 
-import Preview from "../../Preview/Preview";
-import Map from '../../Map/Map';
-import Weather from '../../Weather/Weather';
-import Cities from '../../Cities/Cities';
-import Settings from "../../Settings/Settings";
-import Page404 from "../../Page404/Page404";
+import Preview from "../../Pages/Preview/Preview";
+import Map from '../../Pages/Map/Map';
+import Weather from '../../Pages/Weather/Weather';
+import Cities from '../../Pages/Cities/Cities';
+import Settings from "../../Pages/Settings/Settings";
+import Page404 from "../../Pages/Page404/Page404";
 
 const AnimatedRoutes = () => {
     const location = useLocation();

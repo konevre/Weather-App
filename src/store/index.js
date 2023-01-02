@@ -1,8 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { apiSlice } from "../api/apiSlice"; 
-import weather from "../components/Weather/weatherSlice";
-import cities from "../components/Cities/CitiesSlice";
-import settings from "../components/Settings/SettingsSlice";
+import weather from "../components/Pages/Weather/weatherSlice";
+import cities from "../components/Pages/Cities/CitiesSlice";
+import settings from "../components/Pages/Settings/SettingsSlice";
 
 
 const store = configureStore({

@@ -1,4 +1,4 @@
-import "./adBlock.scss"
+import "./style/adBlock.scss"
 
 const AdBlock = () => {
     return (

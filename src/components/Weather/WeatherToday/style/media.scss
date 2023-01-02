@@ -43,16 +43,23 @@
         &-temp {
             font-size: 1.6vh;
         }
+
+        &-time.sm, &-title.sm {
+            font-size: 2.5vh;
+        }
+        &-temp.sm {
+            font-size: 2.5vh;
+        }
+        &-img.sm {
+            width: 10vw;
+        }
     }
 }
 
 
 @media (max-width: 900px) and (max-height: 700px) { 
     .weather__today {
-        &-title {
-            font-size: 2vh;
-        }
-        &-time {
+        &-title, &-time {
             font-size: 2.2vh;
         }
         &-img.lg {
@@ -66,10 +73,7 @@
 
 @media (max-width: 768px) and (max-height: 700px) { 
     .weather__today {
-        &-title {
-            font-size: 2vh;
-        }
-        &-time {
+        &-title, &-time {
             font-size: 2vh;
         }
         &-img.lg {
@@ -78,6 +82,17 @@
         &-temp {
             font-size: 2.5vh;
         }
+
+        &-time.sm, &-title.sm {
+            font-size: 2.5vh;
+        }
+        &-temp.sm {
+            font-size: 3vh;
+        }
+        &-img.sm {
+            width: 8vw;
+        }
+        
     }
 }
 
@@ -94,6 +109,60 @@
         }
         &-temp {
             font-size: 1.2vh;
+        }
+    }
+}
+
+@media (max-width: 425px) and (max-height: 900px) { 
+    .weather__today {
+        &-title {
+            font-size: 1.6vh;
+        }
+        &-time {
+            font-size: 1.2vh;
+        }
+        &-img.lg {
+            width: 8vw;
+        }
+        &-temp {
+            font-size: 1.2vh;
+        }
+
+        &-time.sm, &-title.sm {
+            font-size: 1.6vh;
+        }
+        &-temp.sm {
+            font-size: 1.6vh;
+        }
+        &-img.sm {
+            width: 14vw;
+        }
+    }
+}
+
+@media (max-width: 425px) and (max-height: 700px) { 
+    .weather__today {
+        &-title {
+            font-size: 1.6vh;
+        }
+        &-time {
+            font-size: 1.2vh;
+        }
+        &-img.lg {
+            width: 8vw;
+        }
+        &-temp {
+            font-size: 1.2vh;
+        }
+
+        &-time.sm, &-title.sm {
+            font-size: 2vh;
+        }
+        &-temp.sm {
+            font-size: 2vh;
+        }
+        &-img.sm {
+            width: 6vw;
         }
     }
 }

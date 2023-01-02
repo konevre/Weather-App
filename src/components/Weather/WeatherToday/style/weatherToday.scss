@@ -1,4 +1,4 @@
-@import "../../../style/variables.scss";
+@import "../../../../style/variables.scss";
 
 .weather__today {
 
@@ -7,6 +7,7 @@
     &.sm {
         background: none;
         padding-left: 0;
+        padding-right: 0;
     }
 
     &.lg {

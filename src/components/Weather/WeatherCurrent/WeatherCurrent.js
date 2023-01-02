@@ -5,7 +5,7 @@ import { useGetCurrentWeatherQuery } from "../../../api/apiSlice";
 
 import WeatherCurrentSkeleton from "./WeatherCurrentSkeleton";
 
-import "./weatherCurrent.scss"
+import "./style/weatherCurrent.scss"
 
 const WeatherCurrent = ({size, page}) => {
 

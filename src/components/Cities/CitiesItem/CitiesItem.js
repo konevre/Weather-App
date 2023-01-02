@@ -11,7 +11,7 @@ import CitiesItemSkeleton from "./CitiesItemSkeleton";
 import { transformCurrent } from "../../../utils/utils";
 
 import { ReactComponent as Close } from "../../../resources/close.svg";
-import "./citiesItem.scss";
+import "./style/citiesItem.scss";
 
 const CitiesItem = ({item, size}) => {
     const dispatch = useDispatch();

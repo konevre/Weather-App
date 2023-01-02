@@ -5,7 +5,7 @@ import { transformToday } from "../../../utils/utils";
 
 import WeatherTodaySkeleton from "./WeatherTodaySkeleton";
 
-import "./weatherToday.scss";
+import "./style/weatherToday.scss";
 
 const WeatherToday = ({number, size, page}) => {
 
@@ -36,9 +36,9 @@ const WeatherToday = ({number, size, page}) => {
             const { time, descr, temp, icon } = item;
             return (
                 <div key={i} className="weather__today-item">
-                    <div className="weather__today-time">{time}</div>
+                    <div className={`weather__today-time ${size}`}>{time}</div>
                     <img className={`weather__today-img ${size}`} src={require(`../../../resources/weather-icons/${icon}.svg`)} alt={descr} />
-                    <div className="weather__today-temp">{temp}</div>
+                    <div className={`weather__today-temp ${size}`}>{temp}</div>
                 </div>
             )
         })

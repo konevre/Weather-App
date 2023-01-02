@@ -1,6 +1,6 @@
 import Skeleton from '@mui/material/Skeleton';
 
-import "./weatherCurrent.scss"
+import "./style/weatherCurrent.scss"
 
 import WeatherError from './WeatherError';
 

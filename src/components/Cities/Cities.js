@@ -4,7 +4,7 @@ import WeatherCurrent from "../Weather/WeatherCurrent/WeatherCurrent";
 import WeatherToday from "../Weather/WeatherToday/WeatherToday";
 import WeatherForecast from "../Weather/WeatherForecast/WeatherForecast";
 
-import "./cities.scss";
+import "./style/cities.scss";
 
 const Cities = () => {
     return (

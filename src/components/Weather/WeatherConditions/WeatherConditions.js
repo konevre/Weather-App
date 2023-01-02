@@ -14,7 +14,7 @@ import sunriseIcon from "../../../resources/conditions/sunrise.svg";
 import sunsetIcon from "../../../resources/conditions/sunset.svg";
 import cloudsIcon from "../../../resources/conditions/clouds.svg";
 
-import "./weatherConditions.scss";
+import "./style/weatherConditions.scss";
 
 const WeatherConditions = () => {
 

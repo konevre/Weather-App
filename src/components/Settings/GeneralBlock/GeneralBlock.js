@@ -1,7 +1,7 @@
 import Switch from '@mui/material/Switch';
 import { useDispatch, useSelector } from 'react-redux';
 import { setHour12 } from "../SettingsSlice";
-import "./general.scss";
+import "./style/general.scss";
 
 const GeneralBlock = () => {
     const { hour12 } = useSelector(state => state.settings)

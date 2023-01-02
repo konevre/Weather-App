@@ -1,7 +1,7 @@
 import Skeleton from '@mui/material/Skeleton';
 
 import close from "../../../resources/close.svg";
-import "./citiesItem.scss";
+import "./style/citiesItem.scss";
 
 const CitiesListSkeleton = () => {
     return (

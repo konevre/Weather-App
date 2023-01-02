@@ -5,7 +5,7 @@ import { useGetForecastWeatherQuery } from "../../../api/apiSlice";
 
 import WeatherForecastSkeleton from "./WeatherForecastSkeleton";
 
-import "./weatherForecast.scss";
+import "./style/weatherForecast.scss";
 
 const WeatherForecast = ({size, number, page}) => {
 
@@ -36,17 +36,21 @@ const WeatherForecast = ({size, number, page}) => {
             const { temp, icon, descr, date } = item;
             return (
                 <div className={`weather__forecast-item ${size}`} key={i}>
-                    <div className="weather__forecast-day">{date}</div>
-                    <img className={`weather__forecast-img ${size}`} src={require(`../../../resources/weather-icons/${icon}d.svg`)} alt="weather__icon" />
-                    <div className="weather__forecast-descr">{descr}</div>
-                    <div className="weather__forecast-temp"><span>{temp}</span></div>
+                    <div className={`weather__forecast-day ${size}`}>{date}</div>
+                    <img 
+                        className={`weather__forecast-img ${size}`} 
+                        src={require(`../../../resources/weather-icons/${icon}d.svg`)} 
+                        alt="weather__icon" 
+                    />
+                    <div className={`weather__forecast-descr ${size}`}>{descr}</div>
+                    <div className={`weather__forecast-temp ${size}`}><span>{temp}</span></div>
                 </div>
             )
         })
 
         return (
             <div className={`weather__forecast ${size}`}>
-                <div className={`weather__forecast-title ${size}`}>5-DAY FORECAST</div>
+                <div className={`weather__forecast-title ${size}`}>{number}-DAY FORECAST</div>
                 <div className="weather__forecast-wrapper">
                     {items}
                 </div>

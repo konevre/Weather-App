@@ -1,18 +1,17 @@
-@import "../../style/variables.scss";
+@import "../../../style/variables.scss";
 
 .preview {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 100vh;
+    grid-template-rows: 90vh;
     column-gap: 1vw;
 
     &__weather {
         background-color: $space-dark;
         border-radius: 45px;
-        margin: 8.8vh 0 8.8vh 10.8vh;
 
         &-img {
-            padding: 50px;
+            padding: 6.5vh;
             display: flex;
             justify-content: center;
             height: 100%;
@@ -20,7 +19,6 @@
     }
 
     &__logo {
-        margin: 8.8vh 2.8vh 8.8vh 0;
         display: flex;
         flex-direction: column;
         align-items: center;

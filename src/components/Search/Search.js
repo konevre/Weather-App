@@ -2,7 +2,7 @@ import { makeActive } from "../Weather/weatherSlice";
 import { addCity } from "../Cities/CitiesSlice";
 import { useDispatch, useSelector } from "react-redux";
 
-import "./search.scss"
+import "./style/search.scss"
 
 const Search = ({page}) => {
     const { cities } = useSelector(state => state.cities);

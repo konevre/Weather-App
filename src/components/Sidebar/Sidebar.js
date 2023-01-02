@@ -5,7 +5,7 @@ import { ReactComponent as WeatherIcon } from "../../resources/sidebar/weather.s
 import { ReactComponent as ListIcon } from "../../resources/sidebar/list.svg";
 import { ReactComponent as MapIcon } from "../../resources/sidebar/map.svg";
 import { ReactComponent as SettingsIcon } from "../../resources/sidebar/settings.svg";
-import "./sidebar.scss";
+import "./style/sidebar.scss";
 
 const Sidebar = () => {
     return (

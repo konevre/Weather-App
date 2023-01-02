@@ -4,7 +4,7 @@ import WeatherConditions from "./WeatherConditions/WeatherConditions";
 import WeatherForecast from "./WeatherForecast/WeatherForecast";
 import BaseComponent from "../BaseComponent/BaseComponent";
 
-import "./weather.scss";
+import "./style/weather.scss";
 
 const Weather = () => {
     return (

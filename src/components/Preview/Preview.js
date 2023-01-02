@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
-import "./preview.scss";
+import "./style/preview.scss";
+
 import preview_img from "../../resources/preview/preview.svg";
 import preview_logo from "../../resources/logo.svg";
 

@@ -2,7 +2,7 @@ import BaseComponent from "../BaseComponent/BaseComponent";
 import WeatherMap from "./WeatherMap/WeatherMap";
 import CitiesList from "../Cities/CitiesList/CitiesList";
 
-import "./map.scss";
+import "./style/map.scss";
 
 const Map = () => {
     return (

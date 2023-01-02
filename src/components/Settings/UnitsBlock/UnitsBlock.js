@@ -1,10 +1,9 @@
 import classNames from "classnames";
-// import { motion } from "framer-motion"
 
 import { useSelector, useDispatch } from "react-redux";
 import { setTemp, setWind, setPressure, setDistance } from "../SettingsSlice";
 
-import "./unitsBlock.scss";
+import "./style/unitsBlock.scss";
 
 const UnitsBlock = () => {
     const { 
@@ -25,13 +24,6 @@ const UnitsBlock = () => {
     const makeActive = (value, action) => {
         dispatch(action(value))
     }
-
-    // const spring = {
-    //     type: "spring",
-    //     stiffness: 700,
-    //     damping: 30,
-    //     duration: 0.3
-    //   };
 
     const items = settingsObj.map(item => {
         const { title, values, selector, setSelector} = item;

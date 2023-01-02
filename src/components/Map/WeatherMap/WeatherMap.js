@@ -4,7 +4,7 @@ import { useGetCurrentWeatherQuery } from "../../../api/apiSlice";
 
 import { transformCoords } from '../../../utils/utils';
 import MarkerCustom from '../MarkerCustom/MarkerCustom';
-import "./weatherMap.scss"
+import "./style/weatherMap.scss"
 
 const WeatherMap = () => {
     const { cities, activeFilter } = useSelector(state => state.cities);

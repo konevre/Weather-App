@@ -15,6 +15,10 @@ dl {
     padding: 0;
 }
 
+img {
+    max-width: 100%;
+}
+
 h1,
 h2,
 h3,
@@ -26,5 +30,4 @@ h6 {
 
 body {
     background-color: $main-color;
-    padding: 5vh;
 }

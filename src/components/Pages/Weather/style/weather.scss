@@ -1,7 +1,8 @@
 .weather__wrapper {
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: repeat(auto);
-    row-gap: 5vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+    gap: 1em;
 }
 @import "./media.scss";

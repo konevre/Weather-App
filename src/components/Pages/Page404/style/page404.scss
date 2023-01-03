@@ -1,34 +1,34 @@
 .page404__wrapper {
-    width: 100%;
-    height: 70vh;
+    padding: 2em;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     
     img {
-        height: 20vh;
+        width: clamp(8em, 30vw, 20em);
+        height: auto;
     }
 }
 
 .page404__title {
-    margin-top: 5vh;
+    margin-top: 1em;
     font-weight: 500;
-    font-size: 3vh;
-    line-height: 5vh;
+    font-size: clamp(0.5em, 5vw, 1.5em);
+    line-height: 2em;
     color: #DEE0E4;
     text-align: center;
 }
 
 .page404__button {
-    margin-top: 3vh;
-    width: 15.5vw;
-    height: 7vh;
+    margin-top: 1.1em;
+    padding: 1em;
     background: #0095FF;
-    border-radius: 53.5px;
+    border-radius: 2em;
     border: none;
     font-weight: 500;
-    font-size: 1.4vw;
+    font-size: clamp(0.5em, 2vw, 1.5em);
     color: #DEE0E4;
     cursor: pointer;
 }

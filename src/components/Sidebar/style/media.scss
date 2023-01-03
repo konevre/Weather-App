@@ -1,55 +1,8 @@
-@media (max-width: 1440px) and (max-height: 900px) {
+@media (min-width: 1024px) {
     .aside {
-
-        &__nav {
-
-            &-logo {
-                height: 6vh;
-            }
-
-            &-title {
-                font-size: 1.7vh;
-            }
-        }
-    }
-}
-@media (max-width: 1200px) and (max-height: 900px) {
-    .aside {
-
-        &__nav {
-
-            &-logo {
-                height: 5vh;
-            }
-            &-title {
-                font-size: 1.4vh;
-            }
-        }
-    }
-}
-
-@media (max-width: 1024px) {
-    .aside {
-
-        &__nav {
-
-            &-item {
-                a {
-                    svg {
-                        height: 3vh;
-                    }
-                }
-            }
-
-            &-title {
-                font-size: 1.7vh;
-            }
-        }
-    }
-}
-
-@media (max-width: 900px) {
-    .aside {
-        display: none;
+        justify-self: center;
+        display: flex;
+        justify-content: center;
+        // align-items: center;
     }
 }

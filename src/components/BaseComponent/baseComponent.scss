@@ -1,8 +1,25 @@
 .base-grid {
+    padding: 2em;
     display: grid;
-    grid-template-columns: 6vw 51vw 31vw;
-    grid-template-rows: 90vh;
-    column-gap: 3vw;
+    grid-template-columns: 1fr;
+    row-gap: 1em;
+
+    &-middle {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &-right {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    &-item {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
 }
 
 @import "./media.scss";

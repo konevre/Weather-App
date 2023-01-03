@@ -1,65 +1,80 @@
-@media (max-width: 1024px) and (max-height: 700px) { 
+@media (min-width: 768px)  {
     .cities__item {
-        &-temp {
-            font-size: 6vh;
-        }
+        grid-template-columns: 1.8fr 5fr 3fr;
 
-        &.sm {
-            width: 100%;
+        &-delete {
+            position: absolute;
+            right: 1em;
+            top: .8em;
+            height: 1.3em;
+            width: 1.3em;
         }
     }
 }
 
-@media (max-width: 900px) and (max-height: 1200px) { 
-    .cities__item {
-        &-temp {
-            font-size: 4vh;
-        }
 
-        &-name {
-            font-size: 4vh;
-        }
+// @media (max-width: 1024px) and (max-height: 700px) { 
+//     .cities__item {
+//         &-temp {
+//             font-size: 6vh;
+//         }
 
-        &.sm {
-            width: 100%;
-        }
-    }
-}
+//         &.sm {
+//             width: 100%;
+//         }
+//     }
+// }
 
-@media (max-width: 425px) and (max-height: 900px) { 
-    .cities__item {
-        &-name {
-            font-size: 2vh;
-        }
-        &-temp {
-            font-size: 3vh;
-        }
-        &-img {
-            width: 17vw;
-        }
-    }
-}
-@media (max-width: 425px) and (max-height: 700px) { 
-    .cities__item {
-        &-name {
-            font-size: 3vh;
-        }
-        &-temp {
-            font-size: 4vh;
-        }
-        &-img {
-            width: 20vw;
-        }
-    }
-}
-@media (max-width: 320px) and (max-height: 700px) { 
-    .cities__item {
-        &-name {
-            font-size: 3vh;
-        }
-        &-temp {
-            font-size: 4vh;
-        }
+// @media (max-width: 900px) and (max-height: 1200px) { 
+//     .cities__item {
+//         &-temp {
+//             font-size: 4vh;
+//         }
+
+//         &-name {
+//             font-size: 4vh;
+//         }
+
+//         &.sm {
+//             width: 100%;
+//         }
+//     }
+// }
+
+// @media (max-width: 425px) and (max-height: 900px) { 
+//     .cities__item {
+//         &-name {
+//             font-size: 2vh;
+//         }
+//         &-temp {
+//             font-size: 3vh;
+//         }
+//         &-img {
+//             width: 17vw;
+//         }
+//     }
+// }
+// @media (max-width: 425px) and (max-height: 700px) { 
+//     .cities__item {
+//         &-name {
+//             font-size: 3vh;
+//         }
+//         &-temp {
+//             font-size: 4vh;
+//         }
+//         &-img {
+//             width: 20vw;
+//         }
+//     }
+// }
+// @media (max-width: 320px) and (max-height: 700px) { 
+//     .cities__item {
+//         &-name {
+//             font-size: 3vh;
+//         }
+//         &-temp {
+//             font-size: 4vh;
+//         }
         
-    }
-}
+//     }
+// }

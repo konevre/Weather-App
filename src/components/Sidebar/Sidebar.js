@@ -12,7 +12,7 @@ const Sidebar = () => {
         <aside className="aside">
             <nav className="aside__nav">
                 <div className="aside__nav-logo">
-                    <Link to="/"><img src={preview_logo} alt="logo" /></Link>
+                    <Link to="/Weather-App"><img src={preview_logo} alt="logo" /></Link>
                 </div>
                 <ul className="aside__nav-list">
                     <li className="aside__nav-item">

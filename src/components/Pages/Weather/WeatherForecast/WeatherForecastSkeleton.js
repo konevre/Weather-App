@@ -6,10 +6,10 @@ const WeatherForecastSkeleton = ({number, size}) => {
     for (let i = 0; i < number; i++) {
         content.push(
             <div className="weather__forecast-item skeleton" key={i}>
-                <Skeleton className="weather__forecast-day skeleton" />
-                <Skeleton className="weather__forecast-img skeleton" variant="circular" />
-                <Skeleton className="weather__forecast-descr skeleton" />
-                <Skeleton className="weather__forecast-temp skeleton" />
+                <Skeleton className={`weather__forecast-day skeleton ${size}`} />
+                <Skeleton className={`weather__forecast-img skeleton ${size}`} variant="circular" />
+                <Skeleton className={`weather__forecast-descr skeleton ${size}`} />
+                <Skeleton className={`weather__forecast-temp skeleton ${size}`} />
             </div>
         )
     }

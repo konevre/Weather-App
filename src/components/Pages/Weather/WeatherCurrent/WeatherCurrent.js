@@ -43,7 +43,7 @@ const WeatherCurrent = ({size, page}) => {
             <div className={`weather__current ${size}`}>
                 <div className="weather__current-wrapper">
                     <div className="weather__current-city">{name}</div>
-                    <div className="weather__current-rain">Last update: {time}</div>
+                    <div className={`weather__current-rain ${size}`}>Last update: {time}</div>
                 </div>
                 <div className="weather__current-temp">{temp}</div>
                 <div className="weather__current-img">

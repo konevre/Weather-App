@@ -1,16 +1,18 @@
-@media (max-width: 900px) and (max-height: 1200px){
+@media (min-width: 1024px) {
     .base-grid {
-        display: grid;
-        grid-template-columns: 7fr;
-        grid-template-rows: 90vh;
-        column-gap: 5vh;
+        height: 100vh;
+        grid-template-columns: 1fr 10fr 6fr;
+        column-gap: 3vw;
+        
+        &-middle {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        &-item {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
     }
 }
-// @media (max-width: 900px) {
-//     .base-grid {
-//         display: grid;
-//         grid-template-columns: 7fr 6fr;
-//         grid-template-rows: 90vh;
-//         column-gap: 5vh;
-//     }
-// }

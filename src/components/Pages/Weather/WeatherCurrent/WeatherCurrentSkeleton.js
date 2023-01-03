@@ -12,19 +12,11 @@ const WeatherCurrentSkeleton = ({error}) => {
         <div className="weather__current">
             {errorDialog}
             <div className="weather__current-wrapper">
-                <div className="weather__current-city">
-                    <Skeleton sx={{ fontSize: "5vh", bgcolor: '#101B2B', width: "80%" }} />
-                </div>
-                <div className="weather__current-rain">
-                    <Skeleton sx={{ fontSize: "2vh", bgcolor: '#101B2B', width: "80%" }} />
-                </div>
+                <Skeleton className="weather__current-city skeleton" />
+                <Skeleton className="weather__current-rain skeleton" />
             </div>
-            <div className="weather__current-temp">
-                <Skeleton sx={{ fontSize: "7vh", bgcolor: '#101B2B', width: "30%", height: "100%" }} />
-            </div>
-            <div className="weather__current-img">
-                <Skeleton variant="circular" sx={{ marginTop: "5vh", marginRight: "2vh", height: "20vh", width: "11vw", bgcolor: '#101B2B' }} />
-            </div>
+            <Skeleton className="weather__current-temp skeleton" />
+            <Skeleton variant="circular" className="weather__current-img skeleton" />
         </div>
     )
 }

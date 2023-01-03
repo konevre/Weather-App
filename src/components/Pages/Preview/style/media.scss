@@ -1,0 +1,12 @@
+
+@media (min-width: 768px) { 
+    .preview {
+        grid-template-columns: 1fr 1fr;
+
+        &__weather {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}

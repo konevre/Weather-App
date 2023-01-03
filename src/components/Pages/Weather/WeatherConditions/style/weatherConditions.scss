@@ -2,27 +2,27 @@
 
 .weather__conditions {
     background: $space-dark;
-    border-radius: 30px;
-    padding: 3vh;
+    border-radius: 2em;
+    padding: clamp(1em, 3vmin, 3em);
 
     &-title {
         font-weight: 700;
-        font-size: 1.9vh;
+        font-size: clamp(.5em, 3.5vw, 0.8em) ;
         color: $grey;
     }
 
     &-wrapper {
         display: grid;
-        margin-top: 2vh;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-template-rows: auto auto;
-        row-gap: 1.5vh;
+        margin-top: 1em;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        row-gap: 1em;
     }
 
     &-item {
         display: grid;
-        grid-template-columns: 4vw auto;
-        grid-template-rows: 3vh auto;
+        grid-template-columns: 2.5em auto;
+        grid-template-rows: 1.2em;
 
         img {
             height: 100%;
@@ -33,14 +33,14 @@
     &-subtitle {
         color: $grey;
         font-weight: 700;
-        font-size: 2vh;
+        font-size: clamp(0.4em, 4vw, .8em);
         align-self: center;
     }
 
     &-value {
         font-weight: 700;
-        margin-top: 0.5vh;
-        font-size: 2.5vh;
+        margin-top: .3em;
+        font-size: clamp(0.4em, 4.5vw, .9em);
         color: $white;
         grid-column: 2;
         grid-row: 2;

@@ -1,15 +1,10 @@
-@media (max-width: 768px) { 
+@media (min-width: 768px) {
     .weather__current {
-        &-img img {
-            height: 25vh;
-            width: 20vw;
-        }
-        &-city {
-            font-size: 4vh;
-        }
-
-        &-temp {
-            font-size: 6vh;
-        }
+        grid-template-rows: auto minmax(5em, 10vh);
+    }
+}
+@media (min-width: 1024px) {
+    .weather__current {
+        grid-template-rows: auto minmax(3em, 10vh);
     }
 }

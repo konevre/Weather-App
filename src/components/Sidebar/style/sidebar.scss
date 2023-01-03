@@ -2,28 +2,37 @@
 
 .aside {
     background-color: $space-dark;
-    border-radius: 30px;
-    width: 100%;
+    border-radius: 1.3em;
+    width: 4em;
+    display: none;
 
     &__nav {
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: space-between;
 
         &-logo {
             
-            margin-top: 1.85vh;
-            width: 4vw;
-            height: 7vh;
+            margin-top: .7em;
+            width: 3em;
+            height: 3em;
             background: $space-light;
-            border-radius: 16px;
-            margin-bottom: 10vh;
+            border-radius: 1em;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
 
             img {
-                padding: 1vh;
+                padding: .3em;
                 width: 100%;
                 height: 100%;
             }
+        }
+
+        &-list {
+            margin: auto 0;
         }
 
         &-item {
@@ -31,11 +40,11 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            margin-bottom: 3.8vh;
+            margin-bottom: 4vh;
             font-weight: 500;
-            line-height: 4.5vh;
+            line-height: 2em;
             color: $white;
-            width: 100%;
+            width: 3em;
             
             a {
                 text-align: center;
@@ -53,15 +62,15 @@
 
                 svg {
                     fill: $grey;
-                    height: 4vh;
-                    width: 3vw;
+                    height: 1.8em;
+                    width: 1.8em;
                 }
             }
         }
 
         &-title {
 
-            font-size: 1.9vh;
+            font-size: 0.8em;
         }
     }
 }

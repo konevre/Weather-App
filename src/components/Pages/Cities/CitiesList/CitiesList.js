@@ -18,7 +18,7 @@ const CitiesList = ({size}) => {
         
     }
 
-    const items = cities.map(item => {
+    const items = cities.map((item, i) => {
             return <CitiesItem item={item} key={item} size={size}/>
         }
     )

@@ -1,9 +1,20 @@
-@media (max-width: 425px) and (max-height: 900px) {
+@media (min-width: 1024px) and (min-height: 400px) {
     .units {
+        &__header {
+            font-size: clamp(.6em, 4vw, 1.1em);
+        }
+
+        &__title {
+            font-size: clamp(0.6em, 2vw, .8em);
+        }
+
         &__toggler {
+            padding: clamp(0.18em, 0.5vmin, .8em);
+    
             &-btn {
-                font-size: 2vh;
+                font-size: clamp(0.8em, 2vw, .8em) ;
             }
         }
     }
+
 }

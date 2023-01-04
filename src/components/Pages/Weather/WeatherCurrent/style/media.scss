@@ -1,10 +1,44 @@
 @media (min-width: 768px) {
     .weather__current {
-        grid-template-rows: auto minmax(5em, 10vh);
+        grid-template-rows: auto 5em;
     }
 }
-@media (min-width: 1024px) {
+
+@media (min-width: 1024px) and (min-height: 400px) {
     .weather__current {
-        grid-template-rows: auto minmax(3em, 10vh);
+        grid-template-rows: auto 3em;
+
+        &-city {
+            font-size: clamp(1em, 7vw, 2em);;
+        }
+        &-temp {
+            font-size: clamp(1em, 8vw, 2.5em);;
+        }
+
+        &-rain {
+            &.sm {
+                font-size: clamp(0.7em, 3vw, .9em);;
+            }
+            &.skeleton {
+                font-size: clamp(0.7em, 2vw, 0.9em);
+                background-color: #101B2B;
+            }
+        }
+    }
+}
+
+@media (min-width: 1024px) and (min-height: 768px) {
+    .weather__current {
+        grid-template-rows: auto 5em;
+
+        &-rain {
+            &.sm {
+                font-size: clamp(0.7em, 3vw, .9em);;
+            }
+            &.skeleton {
+                font-size: clamp(0.7em, 2vw, 0.9em);
+                background-color: #101B2B;
+            }
+        }
     }
 }

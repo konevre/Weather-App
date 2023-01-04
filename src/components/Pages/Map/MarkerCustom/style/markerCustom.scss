@@ -1,4 +1,4 @@
-@import "../../../../style/variables.scss";
+@import "../../../../../style/variables.scss";
 
 .leaflet-popup-content {
     width: 100%;
@@ -7,17 +7,17 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 10px;
+    padding: 1.2em;
 }
 .leaflet-popup-content-wrapper {
     background-color: $space-dark;
-    min-width: 10vw;
+    min-width: 10em;
     max-width: auto;
-    height: 22vh;
+    min-height: 12em;
     
 
     img {
-        width: 4vw;
+        width: 3em;
     }
 }
 
@@ -27,13 +27,13 @@
 
 .popup__name {
     color: $white;
-    font-size: 20px;
+    font-size: clamp(1.2em, 1.8vw, 1.3em);
     text-align: center;
 }
 
 .popup__temp {
     color: $white;
-    font-size: 20px;
+    font-size: clamp(1.2em, 1.8vw, 1.3em);
     text-align: center;
 }
 
@@ -42,18 +42,19 @@ a {
 }
 
 .popup__button {
-    margin-top: 10px;
-    width: 5.5vw;
-    height: 3vh;
+
+    margin-top: 1.1em;
+    padding: 0.7em;
     background: #0095FF;
-    border-radius: 53.5px;
+    border-radius: 2em;
     border: none;
     font-weight: 500;
-    font-size: 0.9vw;
+    font-size: clamp(.9em, 1.8vw, 1.3em);
+    color: #DEE0E4;
+    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: $white;
-    cursor: pointer;
 }
 
+@import "./media.scss";

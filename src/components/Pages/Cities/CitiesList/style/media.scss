@@ -1,0 +1,15 @@
+@media (min-width: 1024px) and (min-height: 768px) {
+    .cities__wrapper {
+        height: 86.3vh;
+        grid-template-rows: 7em;
+        grid-auto-rows: 7em;
+    }
+}
+
+@media (min-width: 1024px) and (min-height: 400px) {
+    .cities__wrapper {
+        height: 80.5vh;
+        grid-template-rows: 6em;
+        grid-auto-rows: 6em;
+    }
+}

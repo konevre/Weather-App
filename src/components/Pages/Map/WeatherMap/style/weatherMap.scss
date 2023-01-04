@@ -1,7 +1,9 @@
 .leaflet-container {
     margin: 0 auto;
-    margin-top: 5vh;
-    height: 80vh;
+    margin-top: 2em;
+    height: 60vh;
     width: 100%;
-    border-radius: 20px;
+    border-radius: 2em;
 }
+
+@import "./media.scss";

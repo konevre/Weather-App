@@ -9,72 +9,79 @@
             height: 1.3em;
             width: 1.3em;
         }
+
+        &-temp {
+            &.sm {
+                display: flex;
+            }
+        }
+    }
+}
+
+@media (min-width: 1024px) and (min-height: 400px) {
+    .cities__item {
+        &-name {
+            font-size: clamp(1em, 6vw, 1.4em);
+        }
+        &-img {
+            height: 6em;
+        
+            &.skeleton {
+                height: 4em;
+                width: 4em;
+            }
+        }
+
+        &-temp {
+            display: none;
+            &.sm {
+                display: none;
+            }
+    
+            &.skeleton {
+                display: none;
+            }
+        }
+
     }
 }
 
 
-// @media (max-width: 1024px) and (max-height: 700px) { 
-//     .cities__item {
-//         &-temp {
-//             font-size: 6vh;
-//         }
+@media (min-width: 1024px) and (min-height: 768px) {
+    .cities__item {
+        grid-template-columns: 1.8fr 5fr 3fr;
 
-//         &.sm {
-//             width: 100%;
-//         }
-//     }
-// }
+        &-name {
+            font-size: clamp(1em, 6vw, 1.9em);
+        }
 
-// @media (max-width: 900px) and (max-height: 1200px) { 
-//     .cities__item {
-//         &-temp {
-//             font-size: 4vh;
-//         }
-
-//         &-name {
-//             font-size: 4vh;
-//         }
-
-//         &.sm {
-//             width: 100%;
-//         }
-//     }
-// }
-
-// @media (max-width: 425px) and (max-height: 900px) { 
-//     .cities__item {
-//         &-name {
-//             font-size: 2vh;
-//         }
-//         &-temp {
-//             font-size: 3vh;
-//         }
-//         &-img {
-//             width: 17vw;
-//         }
-//     }
-// }
-// @media (max-width: 425px) and (max-height: 700px) { 
-//     .cities__item {
-//         &-name {
-//             font-size: 3vh;
-//         }
-//         &-temp {
-//             font-size: 4vh;
-//         }
-//         &-img {
-//             width: 20vw;
-//         }
-//     }
-// }
-// @media (max-width: 320px) and (max-height: 700px) { 
-//     .cities__item {
-//         &-name {
-//             font-size: 3vh;
-//         }
-//         &-temp {
-//             font-size: 4vh;
-//         }
+        &-img {
+            height: 6em;
+            margin-left: .5em;
+            pointer-events: none;
         
-//     }
-// }
+            &.skeleton {
+                height: 5em;
+                width: 5em;
+                margin: auto 0 auto 1.5em;
+                background-color: #35455E;
+            }
+        }
+
+        &-name.sm {
+            font-size: clamp(1em, 6vw, 1.5em);
+        }
+
+        &-temp {
+            display: none;
+            &.sm {
+                display: none;
+            }
+    
+            &.skeleton {
+                display: none;
+            }
+        }
+    }
+}
+

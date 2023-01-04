@@ -88,9 +88,7 @@
         width: clamp(3em, 90%, 4em);
         height: auto;
 
-        &.skeleton {
-            // margin-top: 1vh;
-            background-color: $space-light;
+        &.skeleton {            background-color: $space-light;
             width: clamp(1em, 3em, 4em);
             height: clamp(1em, 3em, 4em);
         }

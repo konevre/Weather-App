@@ -2,19 +2,19 @@
 
 .general {
     &__header {
-        margin-top: 4vh;
+        margin-top: 1em;
         color: $white;
         font-weight: 500;
-        font-size: 3vh;
+        font-size: clamp(1em, 6vw, 1.4em) ;
     }
 
     &__block {
-        margin-top: 2vh;
+        margin-top: 1em;
         width: 100%;
-        height: 10vh;
+        height: 4em;
         background: $space-dark;
-        border-radius: 30px;
-        padding: 3vh;
+        border-radius: 2em;
+        padding: clamp(1em, 3vmin, 3em);
     }
 
     &__wrapper {
@@ -26,7 +26,7 @@
 
     &__title {
         font-weight: 700;
-        font-size: 2vh;
+        font-size: clamp(0.8em, 3vw, .9em) ;
         color: $white;
     }
 }
@@ -34,3 +34,5 @@
 .MuiSwitch-switchBase.Mui-checked {
     color: black;
 }
+
+@import "./media.scss";

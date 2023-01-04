@@ -35,7 +35,7 @@ const WeatherToday = ({number, size, page}) => {
         const items = today.map((item, i) => {
             const { time, descr, temp, icon } = item;
             return (
-                <div key={i} className="weather__today-item">
+                <div key={i} className={`weather__today-item ${size}`}>
                     <div className={`weather__today-time ${size}`}>{time}</div>
                     <img 
                         className={`weather__today-img ${size}`} 

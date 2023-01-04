@@ -1,4 +1,4 @@
-@import "../../../../style/variables.scss";
+@import "../../../../../style/variables.scss";
 
 .cities__wrapper {
     height: 100%;
@@ -21,3 +21,5 @@
         margin-left: 0.5em;
     }
 }
+
+@import "./media.scss";

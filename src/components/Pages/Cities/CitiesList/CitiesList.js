@@ -4,7 +4,7 @@ import { Reorder } from "framer-motion"
 import CitiesItem from "../CitiesItem/CitiesItem";
 import { updateCities } from "../CitiesSlice";
 
-import "./citiesList.scss";
+import "./style/citiesList.scss";
 
 const CitiesList = ({size}) => {
 

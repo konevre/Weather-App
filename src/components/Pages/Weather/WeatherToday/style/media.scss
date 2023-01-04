@@ -8,7 +8,7 @@
                 content: "";
                 display: block;
             }
-            &:nth-child(4):after {
+            &.sm:nth-child(4):after {
                 content: "";
                 display: none;
             }
@@ -35,10 +35,44 @@
     }
 }
 
-@media (min-width: 1024px)  { 
+@media (min-width: 1024px) and (min-height: 400px) { 
     .weather__today {
+        &-title.sm {
+            font-size: clamp(.5em, 3.5vw, .8em) ;
+        }
+
         &-time, &-time.skeleton,
         &-temp, &-temp.skeleton {
+            font-size: clamp(.5em, 3.5vw, .8em);
+        }
+
+        &-time.sm, &-time.sm.skeleton,
+        &-temp.sm, &-temp.sm.skeleton {
+            font-size: clamp(.5em, 3.5vw, .8em);
+        }
+        &-img {
+            width: clamp(2em, 60%, 4em);
+            &.skeleton {
+                width: 3em;
+                height: 3em;
+            }
+        }
+    }
+}
+
+@media (min-width: 1024px) and (min-height: 768px) { 
+    .weather__today {
+        &-title.sm {
+            font-size: clamp(.5em, 3.5vw, .9em) ;
+        }
+
+        &-time, &-time.skeleton,
+        &-temp, &-temp.skeleton {
+            font-size: clamp(.5em, 3.5vw, .9em);
+        }
+
+        &-time.sm, &-time.sm.skeleton,
+        &-temp.sm, &-temp.sm.skeleton {
             font-size: clamp(.5em, 3.5vw, .9em);
         }
         &-img {

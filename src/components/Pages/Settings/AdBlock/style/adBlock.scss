@@ -1,18 +1,15 @@
 @import "../../../../../style/variables.scss";
 
-.adv-wrapper {
-    margin-top: 14vh;
-}
-
 .ad {
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    height: 40vh;
+    padding: 3em;
+    height: 15em;
     width: 100%;
     color: $grey;
-    font-size: 2.5vh;
-    border-radius: 30px;
+    font-size: clamp(1em, 2.5vw, 1.2em) ;
+    border-radius: 2em;
     background-color: $space-dark;
 }

@@ -6,7 +6,7 @@ import { makeActive } from "../../Weather/weatherSlice";
 import { useGetCurrentWeatherQuery } from "../../../../api/apiSlice";
 import { transformCurrent } from "../../../../utils/utils";
 
-import "./markerCustom.scss"
+import "./style/markerCustom.scss"
 
 const MarkerCustom = ({item}) => {
     const settings = useSelector(state => state.settings);

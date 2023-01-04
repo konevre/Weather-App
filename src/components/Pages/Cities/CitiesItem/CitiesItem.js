@@ -69,7 +69,7 @@ const CitiesItem = ({item, size}) => {
             >
                     <img src={require(`../../../../resources/weather-icons/${icon}.svg`)} alt="weather__img" className="cities__item-img" />
                     <div className="cities__item-descr">
-                        <div className="cities__item-name">{name}</div>
+                        <div className={`cities__item-name ${size}`}>{name}</div>
                         <div className="cities__item-time">{time}</div>
                     </div>
                     <div className={`cities__item-temp ${size}`}>{temp}</div>

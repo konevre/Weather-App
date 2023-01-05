@@ -9,10 +9,14 @@
             flex-direction: column;
         }
         
-        &-item {
+        &-middle-item {
             display: flex;
             flex-direction: column;
             flex-grow: 1;
+        }
+
+        &-item-filler {
+            display: none;
         }
     }
 }

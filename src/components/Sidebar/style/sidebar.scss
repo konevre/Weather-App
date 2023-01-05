@@ -1,52 +1,40 @@
 @import "../../../style/variables.scss";
 
 .aside {
+    display: flex;
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+    height: 2.7em;
+    padding: .5em; 
+    bottom: 0; 
+    left: 0;
+    justify-content: center;
     background-color: $space-dark;
-    border-radius: 1.3em;
-    width: 4em;
-    display: none;
 
     &__nav {
         display: flex;
-        flex-direction: column;
-        align-items: center;
         justify-content: space-between;
-
-        &-logo {
-            
-            margin-top: .7em;
-            width: 3em;
-            height: 3em;
-            background: $space-light;
-            border-radius: 1em;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-
-            img {
-                padding: .3em;
-                width: 100%;
-                height: 100%;
-            }
-        }
+        height: 100%;
+        width: 100%;
 
         &-list {
-            margin: auto 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
         }
-
+        &-logo {
+            display: none;
+        }
         &-item {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            margin-bottom: 4vh;
-            font-weight: 500;
-            line-height: 2em;
             color: $white;
-            width: 3em;
             
             a {
+                height: 100%;
                 text-align: center;
                 display: flex;
                 flex-direction: column;
@@ -62,15 +50,14 @@
 
                 svg {
                     fill: $grey;
-                    height: 1.8em;
-                    width: 1.8em;
+                    height: 100%;
+                    width: 100%;
                 }
             }
         }
 
         &-title {
-
-            font-size: 0.8em;
+            display: none;
         }
     }
 }

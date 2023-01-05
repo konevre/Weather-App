@@ -16,7 +16,7 @@ const BaseComponent = (props) => {
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.15 }}
-                    className="base-grid-item"
+                    className="base-grid-middle-item"
                 >
                     {props.middle}
                 </motion.div>
@@ -30,6 +30,7 @@ const BaseComponent = (props) => {
             >
                 {props.right}
             </motion.div>
+            <div className="base-grid-item-filler"></div>
         </div>
     )
 }

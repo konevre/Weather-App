@@ -3,6 +3,7 @@
     display: grid;
     grid-template-columns: 1fr;
     row-gap: 1em;
+    position: relative;
 
     &-middle {
         display: flex;
@@ -15,10 +16,14 @@
         justify-content: center;
     }
     
-    &-item {
+    &-middle-item {
         display: flex;
         flex-direction: column;
         flex-grow: 1;
+    }
+
+    &-item-filler {
+        height: .5em;
     }
 }
 

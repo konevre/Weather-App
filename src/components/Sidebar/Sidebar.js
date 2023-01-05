@@ -47,7 +47,7 @@ const Sidebar = () => {
                             </div>
                         </NavLink> 
                     </li>
-                    <li className="aside__nav-item"></li>
+
                 </ul>
             </nav>
         </aside>

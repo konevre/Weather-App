@@ -18,8 +18,11 @@ const citiesSlice = createSlice({
             setLocalStorage("activeFilter", action.payload)
         },
         addCity: (state, action) => { 
+            if (!state.cities.includes(action.payload)) {
+                setLocalStorage("cities",  [...state.cities, action.payload])
+            }
             state.cities.push(action.payload) 
-            setLocalStorage("cities",  [...state.cities, action.payload])
+            
         },
         deleteCity: (state, action) => { 
             state.cities = state.cities.filter(item => item !== action.payload) 

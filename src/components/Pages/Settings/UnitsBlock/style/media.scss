@@ -9,10 +9,31 @@
         }
 
         &__toggler {
-            padding: clamp(0.18em, 0.5vmin, .8em);
+            padding: clamp(0.18em, 0.5vmin, 0.8em);
     
             &-btn {
-                font-size: clamp(0.8em, 2vw, .8em) ;
+                font-size: clamp(0.8em, 2vw, .9em) ;
+            }
+        }
+    }
+
+}
+
+@media (min-width: 1024px) and (min-height: 768px) {
+    .units {
+        &__header {
+            font-size: clamp(.6em, 4vw, 1.2em);
+        }
+
+        &__title {
+            font-size: clamp(0.6em, 2vw, .9em);
+        }
+
+        &__toggler {
+            padding: clamp(0.18em, 0.5vmin, 1em);
+            height: 2.3em;
+            &-btn {
+                font-size: clamp(0.8em, 2vw, 1em) ;
             }
         }
     }

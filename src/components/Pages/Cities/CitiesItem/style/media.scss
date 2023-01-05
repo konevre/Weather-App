@@ -33,13 +33,13 @@
         }
 
         &-temp {
-            display: none;
+            display: flex;
             &.sm {
                 display: none;
             }
     
             &.skeleton {
-                display: none;
+                display: flex;
             }
         }
 
@@ -49,20 +49,29 @@
 
 @media (min-width: 1024px) and (min-height: 768px) {
     .cities__item {
+        height: 8em;
         grid-template-columns: 1.8fr 5fr 3fr;
+
+        &.sm {
+            grid-template-columns: 3fr 5fr 3fr;
+        }
 
         &-name {
             font-size: clamp(1em, 6vw, 1.9em);
         }
 
+        &-temp {
+            font-size: clamp(0.5em, 5.5vw, 2.6em);
+        }
+
         &-img {
-            height: 6em;
+            height: 8em;
             margin-left: .5em;
             pointer-events: none;
         
             &.skeleton {
-                height: 5em;
-                width: 5em;
+                height: 6em;
+                width: 6em;
                 margin: auto 0 auto 1.5em;
                 background-color: #35455E;
             }
@@ -70,17 +79,6 @@
 
         &-name.sm {
             font-size: clamp(1em, 6vw, 1.5em);
-        }
-
-        &-temp {
-            display: none;
-            &.sm {
-                display: none;
-            }
-    
-            &.skeleton {
-                display: none;
-            }
         }
     }
 }

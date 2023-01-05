@@ -78,8 +78,8 @@
         &-img {
             width: clamp(3em, 90%, 4em);
             &.skeleton {
-                width: 4em;
-                height: 4em;
+                width: 3em;
+                height: 3em;
             }
         }
     }
@@ -89,7 +89,7 @@
     .weather__today {
         &-time, &-time.skeleton,
         &-temp, &-temp.skeleton {
-            font-size: clamp(.5em, 1.2vw, 3em);
+            font-size: clamp(.5em, 1.1vw, 3em);
         }
         &-img {
             width: clamp(3em, 90%, 5em);

@@ -8,10 +8,14 @@ const Search = ({page}) => {
     const dispatch = useDispatch();
 
     const submitHandler = (page, list, city) => {
-        page === "cities" || page === "map" ? 
-            list.includes(city) ? console.log("ALREADY EXIST") :  dispatch(addCity(city)) :
-        page === "settings" ? console.log("MAP") :
-        dispatch(makeActive(city))
+        if ( (page === "cities" || page === "map") && !list.includes(city) ) {
+            dispatch(addCity(city))
+            console.log("added")
+        } else if (page === "settings") {
+            return
+        } else {
+            dispatch(makeActive(city))
+        }
     }
 
     const submitSearch = (e) => {

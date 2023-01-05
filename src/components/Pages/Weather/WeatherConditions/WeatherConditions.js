@@ -47,7 +47,7 @@ const WeatherConditions = () => {
             cloudiness
         } = transformCurrent(currentWeather, settings);
 
-        const conditionsObj = [
+        const generalObj = [
             { subtitle: "Real Feel", value: feel, img: feelIcon},
             { subtitle: "Wind", value: wind, img: windIcon},
             { subtitle: "Humidity", value: humidity, img: dropIcon},
@@ -58,11 +58,14 @@ const WeatherConditions = () => {
             { subtitle: "Sunset", value: sunset, img: sunsetIcon},
         ]
 
-        const items = conditionsObj.map(item => {
+        const items = generalObj.map(item => {
             const { subtitle, value, img } = item;
             return (
                 <div key={subtitle} className="weather__conditions-item">
-                    <img src={img} alt="real_feel" className="weather__conditions-icon" />
+                    <img 
+                        src={img} 
+                        alt="real_feel"
+                        className="weather__conditions-icon" />
                     <div className="weather__conditions-subtitle">{subtitle}</div>
                     <div className="weather__conditions-value">{value}</div>
                 </div>

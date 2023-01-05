@@ -9,15 +9,15 @@
         grid-template-rows: auto 3em;
 
         &-city {
-            font-size: clamp(1em, 7vw, 2em);;
+            font-size: clamp(1em, 7vw, 2em);
         }
         &-temp {
-            font-size: clamp(1em, 8vw, 2.5em);;
+            font-size: clamp(1em, 8vw, 2.5em);
         }
 
         &-rain {
             &.sm {
-                font-size: clamp(0.7em, 3vw, .9em);;
+                font-size: clamp(0.7em, 3vw, .9em);
             }
             &.skeleton {
                 font-size: clamp(0.7em, 2vw, 0.9em);
@@ -30,6 +30,13 @@
 @media (min-width: 1024px) and (min-height: 768px) {
     .weather__current {
         grid-template-rows: auto 5em;
+
+        &-city {
+            font-size: clamp(1em, 7vw, 3em);
+        }
+        &-temp {
+            font-size: clamp(1em, 8vw, 3.5em);
+        }
 
         &-rain {
             &.sm {

@@ -6,7 +6,7 @@ import WeatherError from './WeatherError';
 
 const WeatherCurrentSkeleton = ({error}) => {
     
-    const errorDialog = error ? <WeatherError error={error}/> : null;
+    const errorDialog = error ? <WeatherError descr={error}/> : null;
 
     return (
         <div className="weather__current">

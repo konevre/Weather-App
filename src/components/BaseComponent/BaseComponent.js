@@ -1,5 +1,6 @@
 import Sidebar from "../Sidebar/Sidebar";
 import Search from "../Search/Search";
+import LocationButton from "../LocationButton/LocationButton";
 
 import "./baseComponent.scss";
 
@@ -10,7 +11,10 @@ const BaseComponent = (props) => {
         <div className="base-grid">
             <Sidebar />
             <div className="base-grid-middle">
-                <Search page={props.page}/>
+                <div className="search-wrapper">
+                    <Search page={props.page}/>
+                    <LocationButton/>
+                </div>
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}

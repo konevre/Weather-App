@@ -13,6 +13,7 @@ const WeatherCurrent = ({size, page}) => {
     const settings = useSelector(state => state.settings);
 
     const cityQuery = page === "cities" ? activeFilter : activeCity;
+
     const {
         data: currentWeather,
         isSuccess,
@@ -23,8 +24,9 @@ const WeatherCurrent = ({size, page}) => {
     } = useGetCurrentWeatherQuery(cityQuery);
 
     if (isError) {
+        const descr = error.status  >= 500 ? "500" : "network" 
         const content = activeFilter ? 
-                        <WeatherCurrentSkeleton error={error}/> :
+                        <WeatherCurrentSkeleton error={descr}/> :
                         <WeatherCurrentSkeleton/> ;
                         
         return content;

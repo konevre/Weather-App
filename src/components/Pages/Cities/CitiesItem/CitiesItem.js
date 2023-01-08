@@ -15,10 +15,10 @@ import "./style/citiesItem.scss";
 
 const CitiesItem = ({item, size}) => {
     const dispatch = useDispatch();
-    const { activeFilter } = useSelector(state => state.cities);
     const settings = useSelector(state => state.settings);
+    const { activeFilter } = useSelector(state => state.cities);
     const [ isDragging, setDragging ] = useState(false);
-
+    
     const {
         data: currentWeather,
         isSuccess,
@@ -36,10 +36,8 @@ const CitiesItem = ({item, size}) => {
     }
 
     if (isError) {
-        setTimeout(() => {
-            dispatch(deleteCity(item));
-        }, 5000) 
-        return <WeatherError error={error}/> 
+        const descr = error.status  >= 500 ? "500" : "network" 
+        return <WeatherError descr={descr}/> 
     }
 
     if (isLoading) {

@@ -17,7 +17,7 @@ const WeatherConditionsSkeleton = () => {
 
     return (
         <div className="weather__conditions">
-            <div className="weather__conditions-title">AIR CONDITIONS</div>
+            <div className="weather__conditions-title">GENERAL</div>
             <div className="weather__conditions-wrapper">
                 {content}
             </div>

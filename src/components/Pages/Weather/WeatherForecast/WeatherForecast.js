@@ -33,7 +33,7 @@ const WeatherForecast = ({size, number, page}) => {
         const forecast = transformForecast(forecastWeather, settings, number);
 
         const items = forecast.map((item, i) => {
-            const { temp, icon, descr, date } = item;
+            const { temp, tempNight, icon, descr, date } = item;
             return (
                 <div className={`weather__forecast-item ${size}`} key={i}>
                     <div className={`weather__forecast-day ${size}`}>{date}</div>
@@ -43,7 +43,7 @@ const WeatherForecast = ({size, number, page}) => {
                         alt="weather__icon" 
                     />
                     <div className={`weather__forecast-descr ${size}`}>{descr}</div>
-                    <div className={`weather__forecast-temp ${size}`}><span>{temp}</span></div>
+                    <div className={`weather__forecast-temp ${size}`}><span>{temp}</span>/{tempNight}</div>
                 </div>
             )
         })

@@ -12,15 +12,24 @@ const Transition = forwardRef(function Transition(props, ref) {
     return <Slide direction="up" ref={ref} {...props} />;
   });
 
-const WeatherError = ({error}) => {
-
-    const errorDescr = error.status === 404 ? 
-        "Please write the name of the city without mistakes. Good luck!" : 
-        "We couldn't download data for you. Please, check your connection.";
-
+const WeatherError = ({descr, setError}) => {
     const [open, setOpen] = useState(true);
+
+    const errorMessage = {
+        "404": "Please write the name of the city without mistakes. Good luck!",
+        "500": "Server is not responding. We're trying to fix it.",
+        "network": "We couldn't download data for you. Please, check your connection.",
+        "ip": "Sorry, we couldn't identify your location."
+    }
+
+    const errorDescr = errorMessage[descr];
+
     const handleClose = () => {
         setOpen(false);
+        if (setError) {
+            setError(false);
+        }
+            
     };
 
     return (

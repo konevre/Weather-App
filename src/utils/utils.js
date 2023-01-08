@@ -90,14 +90,22 @@ export const transformToday = (list, timezone, number, settings) => {
 export const transformForecast = (data, settings, number = 5) => {
     const { activeTemp } = settings;
 
-    const filtered = data.list.filter(item => item.dt_txt.slice(-8) === "15:00:00");
-    const list = number <= 5 ? filtered.slice(0, number) : filtered.slice(0, 5);
-
     const days = ['Mon','Tue','Wed','Thu','Fri','Sat', 'Sun'];
-    
-    return list.map(item => {
+    const forecastObj = [];
+    const nightTemp = [];
+
+    data.list.forEach(item => {
+        if (item.dt_txt.slice(-8) === "15:00:00") {
+            forecastObj.push(item);
+        } else if (item.dt_txt.slice(-8) === "03:00:00") {
+            nightTemp.push(item.main.temp);
+        }
+    })
+
+    return forecastObj.slice(0, number).map((item, i) => {
         return {
-            temp: convertTemp(item.main.temp, activeTemp),
+            temp: convertTemp(item.main.temp, activeTemp).slice(0, -2),
+            tempNight: convertTemp(nightTemp[i], activeTemp).slice(0, -2),
             icon: item.weather[0].icon.slice(0, -1),
             descr: item.weather[0].main,
             date: days[new Date(item.dt * 1000).getDay()]

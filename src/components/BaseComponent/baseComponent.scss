@@ -27,4 +27,11 @@
     }
 }
 
+.search-wrapper {
+    height: 2.2em;
+    display: flex;
+    column-gap: .5em;
+    justify-content: space-between;
+}
+
 @import "./media.scss";

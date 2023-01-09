@@ -1,37 +1,38 @@
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+
+import { makeActive } from "../Pages/Weather/weatherSlice";
+import { addCity } from "../Pages/Cities/CitiesSlice";
+import useErrorHandler from "../../hooks/useErrorHandler";
+import { handleDispatch } from "../../utils/utils";
+
 import "./locationButton.scss";
 import icon from "../../resources/search/location.svg";
 import spinner from "../../resources/search/spinner.svg"
-
-// import { Button } from "@mui/material";
-import { useDispatch } from "react-redux";
-import { makeActive } from "../Pages/Weather/weatherSlice";
-
-import useErrorHandler from "../../hooks/useErrorHandler";
-import { useState } from "react";
 
 const _geolocationAPIKey = "c6b672ea1cfa46b19344cadfc2eb4428",
       _geolocationAPI = 'https://api.ipgeolocation.io/ipgeo',
       url = `${_geolocationAPI}?apiKey=${_geolocationAPIKey}&fields=city`
 
-const LocationButton = () => {
+const LocationButton = ({page}) => {
+    const { cities } = useSelector(state => state.cities);
     const { bindError, isError, errorDialog } = useErrorHandler();
     const [ isLoading, setLoading ] = useState(false);
     const dispatch = useDispatch();
 
-    const onLocation = (e) => {
-        e.preventDefault()
-        getLocation()
-    } 
     const getLocation = () => {
         setLoading(true)
         fetch(url)
             .then(res => res.json())
             .then(data => {
-                Object.keys(data).length === 2 ? dispatch(makeActive(data.city)) :
+                if ( data.city ) {
+                    handleDispatch(page, cities, data.city, dispatch, addCity, makeActive)
+                } else {
                     bindError("ip");
+                }
                 setLoading(false)
             })
-            .catch(e => bindError("network"))
+            .catch(() => bindError("network"))
     }
     
     const buttonText = isLoading ? "Loading" : "Location";
@@ -43,7 +44,7 @@ const LocationButton = () => {
             <button 
                 className="location__button" 
                 disabled={isLoading}
-                onClick={onLocation}>
+                onClick={getLocation}>
                 <div className="location__text">{ buttonText }</div>
                 <img src={src} alt="location_icon" className="location__button-img"/>
             </button>

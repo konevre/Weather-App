@@ -124,3 +124,11 @@ export const setLocalStorage = (name, payload) => {
 export const transformCoords = (data) => {
     return [data.coord.lat, data.coord.lon]
 };
+
+export const handleDispatch = (page, cities, city, dispatch, addCity, makeActive) => {
+    if ((page === "cities" || page === "map") && !cities.includes(city)) {
+        dispatch(addCity(city))
+    } if (page === "weather") {
+        dispatch(makeActive(city))
+    }
+}

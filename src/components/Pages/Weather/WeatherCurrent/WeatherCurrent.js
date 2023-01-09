@@ -28,7 +28,6 @@ const WeatherCurrent = ({size, page}) => {
         const content = activeFilter ? 
                         <WeatherCurrentSkeleton error={descr}/> :
                         <WeatherCurrentSkeleton/> ;
-                        
         return content;
     }
 

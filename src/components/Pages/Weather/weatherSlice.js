@@ -14,7 +14,7 @@ const weatherSlice = createSlice({
         makeActive: (state, action) => { 
             state.activeCity = action.payload 
             setLocalStorage("city", action.payload )
-        }
+        },
     }
 });
 
